@@ -1,0 +1,36 @@
+{
+  "name": "oulu",
+  "version": "0.7.0",
+  "main": "assets/stylesheets/_oulu.sass",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/oulu/oulu"
+  },
+  "ignore": [
+    "**/.*",
+    "lib",
+    "tasks",
+    "templates",
+    "test",
+    "*.gemspec",
+    "Rakefile",
+    "Gemfile"
+    ],
+  "devDependencies": {
+    "jquery": "~2.1.3",
+    "bootstrap-sass": "~3.3.4",
+    "bourbon": "~4.2.1"
+  },
+  "authors": {
+    "machida"
+  },
+  "description": "oulu is a sass library.",
+  "keywords": [
+    "sass",
+    "oulu",
+    "rails",
+    "middleman"
+  ],
+  "license": "MIT",
+  "homepage": "http://oulu.github.io/"
+}

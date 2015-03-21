@@ -1,0 +1,50 @@
+=reset-select
+  +appearance(none)
+  +border(none)
+  border: none
+  margin: 0
+  padding: 0
+  background: none transparent
+  vertical-align: middle
+  font-size: inherit
+  color: inherit
+  box-sizing: content-box
+  &:active,
+  &:focus
+    outline: none
+
+=reset-margin($directions: all)
+  @if all($directions)
+    margin: 0
+  @else if horizontal($directions)
+    +margin(horizontal, 0)
+  @else if vertical($directions)
+    +margin(vertical, 0)
+  @else
+    @each $direction in $directions
+      @if horizontal($direction)
+        +margin(horizontal, 0)
+      @else if vertical($direction)
+        +margin(vertical, 0)
+      @else
+        margin-#{$direction}: 0
+
+=reset-padding($directions: all)
+  @if all($directions)
+    padding: 0
+  @else if horizontal($directions)
+    +padding(horizontal, 0px)
+  @else if vertical($directions)
+    +padding(vertical, 0px)
+  @else
+    @each $direction in $directions
+      @if horizontal($direction)
+        +padding(horizontal, 0px)
+      @else if vertical($direction)
+        +padding(vertical, 0px)
+      @else
+        padding-#{$direction}: 0
+
+=reset-all
+  margin: 0
+  padding: 0

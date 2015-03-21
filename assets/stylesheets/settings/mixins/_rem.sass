@@ -1,0 +1,56 @@
+// Baseline, measured in pixels
+// The value should be the same as the font-size value for the html element
+// If the html element's font-size is set to 62.5% (of the browser's default font-size of 16px),
+// then the variable below would be 10px.
+// original https://github.com/bitmanic/rem
+// customize by machida
+
+$baseline-px: 10px !default
+
+=base-font-size
+  font-size: $baseline-px
+  font-size: strip_unit($baseline-px / 10) * 1rem
+
+=rem($property, $px-values, $important: null)
+  @if px($px-values) or list($px-values)
+    @if $property == "font-size" and $px-values < 10px
+      // 9px以下のfont-sizeを使う設定（IE8不可）
+      +base-font-size
+      +transform(scale3d(strip_unit($px-values / strip_unit($baseline-px)), strip_unit($px-values/ strip_unit($baseline-px)), 1))
+      +transform-origin(0 0)
+    @else
+      // Convert the baseline into rems
+      $baseline-rem: $baseline-px / 1rem
+      // remが使えないブラウザ用にpx版を出力
+      @if $important
+        #{$property}: $px-values !important
+      @else
+        #{$property}: $px-values
+      // remで出力
+      @if px($px-values) and $px-values >= 1
+        @if $important
+          #{$property}: $px-values / $baseline-rem !important
+        @else
+          #{$property}: $px-values / $baseline-rem
+      @else
+        // Create an empty list that we can dump values into
+        $rem-values: ()
+        @each $value in $px-values
+          @if px($value)
+            // If the value is zero or not a number, return it
+            @if strip_unit($value) == 0 or type-of( $value ) != "number"
+              $rem-values: append($rem-values, $value)
+            @else
+              $rem-values: append($rem-values, $value / $baseline-rem)
+          @else
+            $rem-values: append($rem-values, $value)
+        // Return the property and its list of converted values
+        @if $important
+          #{$property}: $rem-values !important
+        @else
+          #{$property}: $rem-values
+  @else
+    @if $important
+      #{$property}: $px-values !important
+    @else
+      #{$property}: $px-values

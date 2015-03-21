@@ -1,0 +1,5 @@
+=overlay($overlay-color: null, $overlay-z-index: null)
+  @if $overlay-color
+    +fixed(left 0, top 0, $overlay-z-index)
+    +size(100%)
+    +rgba-background($overlay-color)

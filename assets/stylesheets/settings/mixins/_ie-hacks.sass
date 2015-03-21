@@ -1,0 +1,8 @@
++ie($versions: all)
+  @if $versions == 'all'
+    &.is-ie
+      @content
+  @else
+    @each $version in $versions
+      &.is-ie#{$version}
+        @content
