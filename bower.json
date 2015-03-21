@@ -21,9 +21,9 @@
     "bootstrap-sass": "~3.3.4",
     "bourbon": "~4.2.1"
   },
-  "authors": {
+  "authors": [
     "machida"
-  },
+  ],
   "description": "oulu is a sass library.",
   "keywords": [
     "sass",
