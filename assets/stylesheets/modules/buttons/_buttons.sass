@@ -1,0 +1,59 @@
+$button-sizes: xs, sm, md, lg, xl !default
+$button-color-names: default, primary, success, warning, danger !default
+$button-styles: normal, border, bold-border, flat-emboss, material, flat-round !default
+
+@import button-base
+
+// button styles
+@import styles/normal
+@import styles/border
+@import styles/flat-emboss
+@import styles/material
+@import styles/flat-round
+
+@import button-helper
+
+=button($style, $size, $color, $options: false)
+  +button-base
+  @if $style == normal
+    +button-size($size, 1px, 4px)
+    +normal-button($color)
+  @else if $style == border
+    +button-size($size, 1px, 4px)
+    +border-button($color)
+  @else if $style == bold-border
+    +button-size($size, 2px, 8px)
+    +border-button($color)
+  @else if $style == flat-emboss
+    +button-size($size, false, 4px)
+    +flat-emboss-button($color)
+  @else if $style == material
+    +button-size($size, false, false)
+    +material-button($color)
+  @else if $style == flat-round
+    +button-size($size, false, false)
+    +flat-round-button($color)
+  @each $option in $options
+    @if $option == 'left'
+      text-align: left
+    @if $option == 'right'
+      text-align: right
+
+@each $button-size in $button-sizes
+  $button-color-name: ''
+  $button-color: ''
+  $button-style: ''
+  @each $button-color-name in $button-color-names
+    @each $button-style in $button-styles
+      .is-button-#{$button-style}-#{$button-size}-#{$button-color-name}
+        @if $button-color-name == default
+          $button-color: $default
+        @else if $button-color-name == primary
+          $button-color: $primary
+        @else if $button-color-name == success
+          $button-color: $success
+        @else if $button-color-name == warning
+          $button-color: $warning
+        @else if $button-color-name == danger
+          $button-color: $danger
+        +button($button-style, $button-size, $button-color)

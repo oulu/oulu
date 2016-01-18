@@ -1,4 +1,4 @@
-# Middleman::oulu
+# oulu
 
 oulu is a sass mixin libraly.
 

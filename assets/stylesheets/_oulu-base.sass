@@ -14,6 +14,7 @@
 
 // functions
 ///////////////////
+@import settings/functions/math
 @import settings/functions/list
 @import settings/functions/number
 @import settings/functions/string
@@ -28,7 +29,7 @@
 @import settings/functions/background
 @import settings/functions/border
 @import settings/functions/animation
-@import settings/functions/grid
+@import settings/functions/display
 
 // mixins
 ///////////////////
@@ -44,12 +45,13 @@
 @import settings/mixins/border-radius
 @import settings/mixins/table
 @import settings/mixins/list
-@import settings/mixins/color
 @import settings/mixins/overlay
 @import settings/mixins/balloon-tail
 @import settings/mixins/margin-padding
 @import settings/mixins/animation
-@import settings/mixins/grids
+@import settings/mixins/grid/grid-framework
+@import settings/mixins/grid/grid
+@import settings/mixins/grid
 @import settings/mixins/responsive-utilities
 @import settings/mixins/background
 @import settings/mixins/line
@@ -58,4 +60,5 @@
 // initializers
 ///////////////////
 
+@import settings/initializers/sanitize
 @import settings/initializers/reset

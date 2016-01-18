@@ -1,0 +1,20 @@
+{
+  "name": "oulu",
+  "version": "0.8.1",
+  "main": "assets/stylesheets/_oulu.sass",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/oulu/oulu"
+  },
+  "keywords": [
+    "sass",
+    "oulu"
+  ],
+  "contributors": [
+    "machida"
+  ],
+  "license": "MIT",
+  "devDependencies": {
+    "bourbon": "~4.2.1"
+  }
+}
