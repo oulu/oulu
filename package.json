@@ -1,7 +1,7 @@
 {
   "name": "oulu",
-  "version": "0.8.1",
-  "main": "assets/stylesheets/_oulu.sass",
+  "version": "0.8.2",
+  "main": "index.js",
   "repository": {
     "type": "git",
     "url": "git://github.com/oulu/oulu"
