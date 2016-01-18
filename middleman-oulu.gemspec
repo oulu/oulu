@@ -4,8 +4,8 @@ $LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
 require 'middleman-oulu/version'
 
 Gem::Specification.new do |spec|
-  spec.name          = "middleman-oulu"
-  spec.version       = Middleman::Oulu::VERSION
+  spec.name          = "oulu"
+  spec.version       = Oulu::VERSION
   spec.authors       = ["machida"]
   spec.email         = ["machidanohimitsu@gmail.com"]
   spec.description   = %q{This gem provides assets files for Middleman Project.}

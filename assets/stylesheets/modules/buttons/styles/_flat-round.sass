@@ -1,0 +1,23 @@
+=flat-round-button($color: blue)
+  +transition(.5s (background-image))
+  background-color: $color
+  color: luma_contrast_color($color)
+  font-weight: bold
+  border-radius: 1000px
+  &:hover,
+  &.hover,
+  &.is-hover
+    $color: lighten($color, 6%)
+    @if luma($color) > 90
+      background-color: #f2f2f2
+    @else
+      background-color: $color
+  &:active,
+  &.active,
+  &.is-active
+    $color: lighten($color, 6%)
+    @if luma($color) > 90
+      background-color: #f2f2f2
+    @else
+      background-color: $color
+    +top(1px)
