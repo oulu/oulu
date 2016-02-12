@@ -35,7 +35,7 @@
 
 @function luma_contrast($color-1, $color-2: null)
   @if $color-2
-    @if abs(luma($color-1) - luma($color-2)) > $ruma-threshold
+    @if abs(luma($color-1) - luma($color-2)) > $luma-threshold
       @return true
     @else
       @return null
