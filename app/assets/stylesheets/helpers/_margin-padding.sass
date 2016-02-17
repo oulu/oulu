@@ -1,25 +1,25 @@
 body
   @for $i from 0 through 20
-    .is-margin-bottom-#{$i*4}
-      +rem('margin-bottom', #{$i*4}px)
-    .is-margin-top-#{$i*4}
-      +rem('margin-top', #{$i*4}px)
-    .is-margin-left-#{$i*4}
-      +rem('margin-left', #{$i*4}px)
-    .is-margin-right-#{$i*4}
-      +rem('margin-right', #{$i*4}px)
-    .is-margin-horizontal-#{$i*4}
-      +margin(horizontal, #{$i*4}px)
-    .is-padding-bottom-#{$i*4}
-      +rem('padding-bottom', #{$i*4}px)
-    .is-padding-top-#{$i*4}
-      +rem('padding-top', #{$i*4}px)
-    .is-padding-left-#{$i*4}
-      +rem('padding-left', #{$i*4}px)
-    .is-padding-right-#{$i*4}
-      +rem('padding-right', #{$i*4}px)
-    .is-padding-horizontal-#{$i*4}
-      +padding(horizontal, #{$i*4}px)
+    .is-margin-bottom-#{$i*4px}
+      margin-bottom: $i*4px
+    .is-margin-top-#{$i*4px}
+      margin-top: $i*4px
+    .is-margin-left-#{$i*4px}
+      margin-left: $i*4px
+    .is-margin-right-#{$i*4px}
+      margin-right: $i*4px
+    .is-margin-horizontal-#{$i*4px}
+      +margin(horizontal, $i*4px)
+    .is-padding-bottom-#{$i*4px}
+      padding-bottom: $i*4px
+    .is-padding-top-#{$i*4px}
+      padding-top: $i*4px
+    .is-padding-left-#{$i*4px}
+      padding-left: $i*4px
+    .is-padding-right-#{$i*4px}
+      padding-right: $i*4px
+    .is-padding-horizontal-#{$i*4px}
+      +padding(horizontal, $i*4px)
 
   // horizontal-margin-0
   .is-horizontal-margin-0
@@ -56,26 +56,26 @@ body
 // こっちに変更
 body
   @for $i from 0 through 20
-    .has-margin-bottom-#{$i*4}
-      +rem('margin-bottom', #{$i*4}px)
+    .has-margin-bottom-#{$i*4px}
+      margin-bottom: $i*4px
     .has-margin-top-#{$i*4}
-      +rem('margin-top', #{$i*4}px)
+      margin-top: $i*4px
     .has-margin-left-#{$i*4}
-      +rem('margin-left', #{$i*4}px)
+      margin-left: $i*4px
     .has-margin-right-#{$i*4}
-      +rem('margin-right', #{$i*4}px)
+      margin-right: $i*4px
     .has-margin-horizontal-#{$i*4}
-      +margin(horizontal, #{$i*4}px)
-    .has-padding-bottom-#{$i*4}
-      +rem('padding-bottom', #{$i*4}px)
-    .has-padding-top-#{$i*4}
-      +rem('padding-top', #{$i*4}px)
-    .has-padding-left-#{$i*4}
-      +rem('padding-left', #{$i*4}px)
-    .has-padding-right-#{$i*4}
-      +rem('padding-right', #{$i*4}px)
-    .has-padding-horizontal-#{$i*4}
-      +padding(horizontal, #{$i*4}px)
+      +margin(horizontal, $i*4px)
+    .has-padding-bottom-#{$i*4px}
+      padding-bottom: $i*4px
+    .has-padding-top-#{$i*4px}
+      padding-top: $i*4px
+    .has-padding-left-#{$i*4px}
+      padding-left: $i*4px
+    .has-padding-right-#{$i*4px}
+      padding-right: $i*4px
+    .has-padding-horizontal-#{$i*4px}
+      +padding(horizontal, $i*4px)
 
   // horizontal-margin-0
   .has-horizontal-margin-0

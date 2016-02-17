@@ -1,39 +1,30 @@
-=block-size($values)
-  @if equal_nth($values, 2)
-    +rem('width', nth($values, 1))
-    +rem('height', nth($values, 2))
-  @else
-    +rem('width', nth($values, 1))
-    +rem('height', nth($values, 1))
-
 =center-block($values)
   $block-width: optional_nth($values, 1)
   $block-height: optional_nth($values, 2)
   $block-z-index: optional_nth($values, 3)
   +block-size($block-width $block-height)
-  +fixed(left 50%, top 50%, $block-z-index)
-  +rem('margin-top', $block-height / 2 * -1)
-  +rem('margin-left', $block-width / 2 * -1)
+  +position(fixed, left 50%, top 50%, $block-z-index)
+  margin-top: $block-height / 2 * -1
+  margin-left: $block-width / 2 * -1
 
 =horizontal-center-block($values)
   $block-width: optional_nth($values, 1)
   $block-z-index: optional_nth($values, 2)
-  +rem('width', $block-width)
+  width: $block-width
   +fixed(left 50%, $block-z-index)
-  +rem('margin-left', $block-width / 2 * -1)
+  margin-left: $block-width / 2 * -1
 
 =square-block($values)
   $square-block-size: optional_nth($values, 1)
   $square-block-height: optional_nth($values, 2)
   $square-block-line-height: optional_nth($values, 3)
-  +rem('width', $square-block-size)
-  +rem('height', if($square-block-height, $square-block-height, $square-block-size))
+  +size($square-block-size if($square-block-height, $square-block-height, $square-block-size))
   @if $square-block-line-height
-    +rem('line-height', $square-block-line-height)
+    line-height: $square-block-line-height
   @else if $square-block-height
-    +rem('line-height', $square-block-height)
+    line-height: $square-block-height
   @else
-    +rem('line-height', $square-block-size)
+    line-height: $square-block-size
 
 =overflow($values)
   $overflow-x: optional_nth($values, 1)
@@ -55,7 +46,7 @@
   +prefixer(background-clip, $value, webkit moz spec)
 
 =box-shadow($values...)
-  +rem(box-shadow, $values)
+  box-shadow: $values
 
 =text-shadow($values...)
-  +rem(text-shadow, $values)
+  text-shadow: $values

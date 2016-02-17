@@ -1,7 +1,7 @@
 =table-cell-assign($value)
   @if list($value)
     @if unit_number(nth($value, 1))
-      +rem('padding', $value)
+      padding: $value
     @if direction(nth($value, 1))
       +padding(nth($value, 1), nth($value, 2))
   white-space: if(white_space($value), $value, null)
