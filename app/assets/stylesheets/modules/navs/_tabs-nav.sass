@@ -17,13 +17,13 @@ $tabs-nav-current-font-color: red !default
     +position(absolute, left 0, bottom 0)
 .tabs-nav__item
   +inline-block(bottom)
-  +rem('margin-right', 8px)
+  margin-right: 8px
   &:last-child
     margin-right: 0
 .tabs-nav__link
   +block-link
   +border(top horizontal, $tabs-nav-border-width solid $tabs-nav-border-color)
-  +rem('padding-bottom', $tabs-nav-border-width)
+  padding-bottom: $tabs-nav-border-width
   +text-block($tabs-nav-font-size round($tabs-nav-font-size*2.6), center $tabs-nav-font-color)
   +padding(horizontal, $tabs-nav-font-size*1.6)
   position: relative

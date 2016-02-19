@@ -1,69 +1,69 @@
 =margin($value1, $value2: null)
   @if number(nth($value1, 1)) or nth($value1, 1) == 'auto'
     @if equal_nth($value1, 1)
-      +rem('margin', $value1)
+      margin: value1
     @else if equal_nth($value1, 2)
-      +rem('margin-top', nth($value1, 1))
-      +rem('margin-bottom', nth($value1, 2))
+      margin-top: nth($value1, 1)
+      margin-bottom: nth($value1, 2)
     @else if equal_nth($value1, 3)
-      +rem('margin-top', nth($value1, 1))
-      +rem('margin-bottom', nth($value1, 3))
+      margin-top: nth($value1, 1)
+      margin-bottom: nth($value1, 3)
       +margin(horizontal, nth($value1, 2))
     @else if equal_nth($value1, 4)
-      +rem('margin-top', nth($value1, 1))
-      +rem('margin-right', nth($value1, 2))
-      +rem('margin-bottom', nth($value1, 3))
-      +rem('margin-left', nth($value1, 4))
+      margin-top: nth($value1, 1)
+      margin-right: nth($value1, 2)
+      margin-bottom: nth($value1, 3)
+      margin-left: nth($value1, 4)
   @else if length($value1) == 1 and nth($value1, 1) == 'vertical'
-    +rem('margin-top', if(list($value2), nth($value2, 1), $value2))
-    +rem('margin-bottom', if(list($value2),nth($value2, 2), $value2))
+    margin-top: if(list($value2), nth($value2, 1), $value2)
+    margin-bottom: if(list($value2),nth($value2, 2), $value2)
   @else if length($value1) == 1 and nth($value1, 1) == 'horizontal'
-    +rem('margin-left', if(list($value2), nth($value2, 1), $value2))
-    +rem('margin-right', if(list($value2),nth($value2, 2), $value2))
+    margin-left: if(list($value2), nth($value2, 1), $value2)
+    margin-right: if(list($value2),nth($value2, 2), $value2)
   @else
     @each $position in $value1
       @if $position == 'all'
-        +rem('margin', $value2)
+        margin: $value2
       @else if $position == 'vertical'
-        +rem('margin-top', $value2)
-        +rem('margin-bottom', $value2)
+        margin-top: $value2
+        margin-bottom: $value2
       @else if $position == 'horizontal'
-        +rem('margin-left', $value2)
-        +rem('margin-right', $value2)
+        margin-left: $value2
+        margin-right: $value2
       @else
-        +rem('margin-#{$position}', $value2)
+        margin-#{$position}: $value2
 
 =padding($value1: null, $value2: null)
   @if number(nth($value1, 1)) or nth($value1, 1) == 'auto'
     @if equal_nth($value1, 1)
-      +rem('padding', $value1)
+      padding: $value1
     @else if equal_nth($value1, 2)
-      +rem('padding-top', nth($value1, 1))
-      +rem('padding-bottom', nth($value1, 2))
+      padding-top: nth($value1, 1)
+      padding-bottom: nth($value1, 2)
     @else if equal_nth($value1, 3)
-      +rem('padding-top', nth($value1, 1))
-      +rem('padding-bottom', nth($value1, 3))
+      padding-top: nth($value1, 1)
+      padding-bottom: nth($value1, 3)
       +padding(horizontal, nth($value1, 2))
     @else if equal_nth($value1, 4)
-      +rem('padding-top', nth($value1, 1))
-      +rem('padding-right', nth($value1, 2))
-      +rem('padding-bottom', nth($value1, 3))
-      +rem('padding-left', nth($value1, 4))
+      padding-top: nth($value1, 1)
+      padding-right: nth($value1, 2)
+      padding-bottom: nth($value1, 3)
+      padding-left: nth($value1, 4)
   @else if length($value1) == 1 and nth($value1, 1) == 'vertical'
-    +rem('padding-top', if(list($value2), nth($value2, 1), $value2))
-    +rem('padding-bottom', if(list($value2),nth($value2, 2), $value2))
+    padding-top: if(list($value2), nth($value2, 1), $value2)
+    padding-bottom: if(list($value2),nth($value2, 2), $value2)
   @else if length($value1) == 1 and nth($value1, 1) == 'horizontal'
-    +rem('padding-left', if(list($value2), nth($value2, 1), $value2))
-    +rem('padding-right', if(list($value2),nth($value2, 2), $value2))
+    padding-left: if(list($value2), nth($value2, 1), $value2)
+    padding-right: if(list($value2),nth($value2, 2), $value2)
   @else
     @each $position in $value1
       @if $position == 'all'
-        +rem('padding', $value2)
+        padding: $value2
       @else if $position == 'vertical'
-        +rem('padding-top', $value2)
-        +rem('padding-bottom', $value2)
+        padding-top: $value2
+        padding-bottom: $value2
       @else if $position == 'horizontal'
-        +rem('padding-left', $value2)
-        +rem('padding-right', $value2)
+        padding-left: $value2
+        padding-right: $value2
       @else
-        +rem('padding-#{$position}', $value2)
+        padding-#{$position}: $value2

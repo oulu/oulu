@@ -14,7 +14,7 @@
       +background-image(linear-gradient(left, color-stops(nth($stripe-color, 1), nth($stripe-color, 1) (strip_unit($stripe-width)/(strip_unit($stripe-width) + strip_unit($gatter-width)))*100%, transparent (strip_unit($stripe-width)/(strip_unit($stripe-width) + strip_unit($gatter-width)))*100%, transparent 100%)))
       background-color: nth($stripe-color, 2)
   +background-size(($stripe-width + $gatter-width) ($stripe-width + $gatter-width))
-  +rem('height', $size)
+  height: $size
 
 // http://codepen.io/anon/pen/tGhLp を改造
 =striped-line($stripe-color: #000000, $size: 20px)
@@ -29,4 +29,4 @@
       +background-image(linear-gradient(-45deg, nth($stripe-color, 1) 25%, transparent 25%, transparent 50%, nth($stripe-color, 1) 50%, nth($stripe-color, 1) 75%, transparent 75%, transparent))
       background-color: nth($stripe-color, 2)
   +background-size($size $size)
-  +rem('height', $size)
+  height: $size

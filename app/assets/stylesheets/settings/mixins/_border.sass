@@ -2,7 +2,7 @@
   #{if($border-position, border-#{$border-position}, border)}:
     @for $i from 1 through length($border-values)
       @if border-width(nth($border-values, $i))
-        +rem('width', nth($border-values, $i))
+        width: nth($border-values, $i)
       @else if border-style(nth($border-values, $i))
         style: nth($border-values, $i)
       @else if border-color(nth($border-values, $i))

@@ -3,23 +3,23 @@
 
 =border-radius($value1: null, $value2: null)
   @if number(nth($value1, 1))
-    +rem('border-radius', $value1)
+    border-radius: $value1
   @else
     @for $i from 1 through length($value1)
       @if nth($value1, $i) == 'all'
-        +rem('border-radius', $value2)
+        border-radius: $value2
       @else if top(nth($value1, $i))
-        +rem('border-top-left-radius', $value2)
-        +rem('border-top-right-radius', $value2)
+        border-top-left-radius: $value2
+        border-top-right-radius: $value2
       @else if bottom(nth($value1, $i))
-        +rem('border-bottom-left-radius', $value2)
-        +rem('border-bottom-right-radius', $value2)
+        border-bottom-left-radius: $value2
+        border-bottom-right-radius: $value2
       @else if left(nth($value1, $i))
-        +rem('border-top-left-radius', $value2)
-        +rem('border-bottom-left-radius', $value2)
+        border-top-left-radius: $value2
+        border-bottom-left-radius: $value2
       @else if right(nth($value1, $i))
-        +rem('border-top-right-radius', $value2)
-        +rem('border-bottom-right-radius', $value2)
+        border-top-right-radius: $value2
+        border-bottom-right-radius: $value2
 
 // 使い方
 // +reset-border-radius(vertical, 4px)

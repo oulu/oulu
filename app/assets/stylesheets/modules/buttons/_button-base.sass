@@ -25,7 +25,7 @@
   @else
     $border-width: 0
   +text-block($font-size $height - ($border-width*2))
-  +rem('height', $height)
+  height: $height
   +padding(horizontal, $height/1.6)
   @if $border-radius
     +border-radius($border-radius)
@@ -34,27 +34,27 @@
   i,
   .is-button-icon
     @if $font-size > 28
-      +rem('margin-right', $font-size/4)
+      margin-right: $font-size/4
     @else
-      +rem('margin-right', $font-size/3)
+      margin-right: $font-size/3
   &.has-right-icon
     i,
     .is-button-icon
       margin-right: 0
       @if $font-size > 28
-        +rem('margin-left', $font-size/4)
+        margin-left: $font-size/4
       @else
-        +rem('margin-left', $font-size/3)
+        margin-left: $font-size/3
   &.is-input-container
     padding: 0
     position: relative
     i,
     .is-button-icon
       +position(absolute, left $height/2, top 0)
-      +rem('line-height', $height - ($border-width*2))
+      line-height: $height - ($border-width*2)
     input
       +padding(horizontal, ($height + if($font-size > 28, $font-size/4, $font-size/3)) $height/2)
-      +rem('height', $height - ($border-width*2))
+      height: $height - ($border-width*2)
 
 =button-group
   .is-button-group
