@@ -5,6 +5,7 @@
   color: if(color($value), $value, null)
   white-space: if(white_space($value), $value, null)
   display: if(display($value), $value, null)
+  text-decoration: : if(text_decoration:($value), $value, null)
   @if unit_number($value)
     +top($value, null)
 

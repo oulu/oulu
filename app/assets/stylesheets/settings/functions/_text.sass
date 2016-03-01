@@ -44,3 +44,9 @@
     @return true
   @else
     @return null
+
+@function text_decoration($value)
+  @if $value == "none" or $value == "underline" or $value == "overline" or $value == "line-through" or $value == "blink"
+    @return true
+  @else
+    @return null
