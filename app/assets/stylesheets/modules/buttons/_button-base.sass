@@ -10,15 +10,15 @@
 =button-size($size, $border-width: 0, $border-radius: 4px)
   $font-size: ""
   @if $size == 'xs'
-    $font-size: 12px
+    $font-size: $xs-button-font-size
   @else if $size == 'sm'
-    $font-size: 14px
+    $font-size: $sm-button-font-size
   @else if $size == 'md'
-    $font-size: 16px
+    $font-size: $md-button-font-size
   @else if $size == 'lg'
-    $font-size: 18px
+    $font-size: $lg-button-font-size
   @else if $size == 'xl'
-    $font-size: 20px
+    $font-size: $xl-button-font-size
   $height: round($font-size * 2 + $font-size/2.2)
   @if $border-width
     +border(all, $border-width)
