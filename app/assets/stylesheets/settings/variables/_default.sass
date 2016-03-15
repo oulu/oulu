@@ -21,14 +21,6 @@ $container-max-width: 1100px !default
 $container-horizontal-padding: 16px !default
 
 /////////////////
-// text-color
-////////////////
-
-$bright-text-color: white !default
-$dark-text-color: black !default
-$luma-threshold: 100 / $pi !default
-
-/////////////////
 // grids
 ////////////////
 
@@ -101,7 +93,7 @@ $container-lg: $container-large-desktop !default
 
 $fw: 400 !default
 
-$basic-sans-serif: "Lucida Grande", "Lucida Sans Unicode", Roboto, "Droid Sans", "ヒラギノ角ゴ ProN", "Hiragino Kaku Gothic ProN", "游ゴシック", YuGothic, "メイリオ", Meiryo, "ＭＳ Ｐゴシック", Helvetica, Arial, Verdana, sans-serif !default
+$basic-sans-serif: "ヒラギノ角ゴ Pro W3", Hiragino Kaku Gothic Pro, "メイリオ", Meiryo, sans-serif !default
 $basic-bold-sans-serif: "ヒラギノ角ゴ StdN", "Hiragino Kaku Gothic StdN", "メイリオ", Meiryo, Roboto, "Droid Sans", "游ゴシック", YuGothic, "ヒラギノ角ゴ ProN", "Hiragino Kaku Gothic ProN", "メイリオ", Meiryo, "ＭＳ Ｐゴシック", Helvetica, Arial, Verdana, sans-serif, "ＭＳ Ｐゴシック", Helvetica, Arial, Verdana, sans-serif !default
 $basic-serif: "Times New Roman", "ヒラギノ明朝 ProN", "Hiragino Mincho ProN", "HGS明朝E", "游明朝", YuMincho,'ＭＳ Ｐ明朝','MS PMincho', serif !default
 $basic-mono: Osaka-mono, "MS Gothic", monospace !default
@@ -109,35 +101,30 @@ $basic-maru: "Varela Round", "Lucida Grande", "Lucida Sans Unicode", Roboto, "Dr
 $basic-fonts: $basic-sans-serif !default
 
 /////////////////
-// UI colors
-////////////////
-
-$default: #ffffff !default
-$primary: #337AB7 !default
-$success: #5CB85C !default
-$info: #5BC0DE !default
-$warning: #F0AD4E !default
-$danger: #D9534F !default
-
-/////////////////
 // text colors
 ////////////////
 
-$default-text: black !default
+$luma-threshold: 100 / $pi !default
+$default-text: #434a54 !default
 $reversal-text: white !default
+$bright-text-color: $reversal-text !default
+$dark-text-color: $default-text !default
+
+/////////////////
+// luma contrast color
+////////////////
+
+$luma-contrast-bright-color: $default-text !default
+$luma-contrast-dark-color: $reversal-text !default
 
 /////////////////
 // SNS colors
 ////////////////
 
-$twitter: #55acee
-$facebook: #3b5998
-$hatena: #008FDE
-$pocket: #f23c53
-
-// luma contrast color
-$luma-contrast-bright-color: $default-text !global
-$luma-contrast-dark-color: $reversal-text !global
+$twitter: #55acee !default
+$facebook: #3b5998 !default
+$hatena: #008FDE !default
+$pocket: #f23c53 !default
 
 /////////////////
 // sanitize.css
@@ -145,7 +132,7 @@ $luma-contrast-dark-color: $reversal-text !global
 
 $root-background-color: #FFFFFF !default
 $root-box-sizing: border-box !default
-$root-color: #000000 !default
+$root-color: $default-text !default
 $root-cursor: default !default
 $root-font-family: $basic-sans-serif !default
 $root-font-size: 100% !default
@@ -166,13 +153,3 @@ $small-font-size: 75% !default
 $table-border-collapse: collapse !default
 $table-border-spacing: 0 !default
 $textarea-resize: vertical !default
-
-/////////////////
-// buttons
-////////////////
-
-$xs-button-font-size: 12px !default
-$sm-button-font-size: 14px !default
-$md-button-font-size: 16px !default
-$lg-button-font-size: 18px !default
-$xl-button-font-size: 20px !default

@@ -22,3 +22,13 @@
       background-color: $color
     box-shadow: shade($color, 18%) 0 2px 0
     +top(1px)
+  &.is-radio,
+  &.is-checkbox
+    &:before
+      box-shadow: rgba(black, 0.2) 0 1px 1px inset
+      background-color: #{if(luma_bright($color), shade($color, 20%), tint($color, 20%))}
+  &.is-select
+    &:after
+      color: rgba(luma_contrast_color($color), .7)
+      border-left: 1px solid
+      border-left-color: #{if(luma_bright($color), shade($color, 20%), tint($color, 20%))}

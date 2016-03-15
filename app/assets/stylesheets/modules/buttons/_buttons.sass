@@ -1,7 +1,3 @@
-$button-sizes: xs, sm, md, lg, xl !default
-$button-color-names: default, primary, success, warning, danger !default
-$button-styles: normal, border, bold-border, flat-emboss, material, flat-round !default
-
 @import button-base
 
 // button styles
@@ -56,4 +52,6 @@ $button-styles: normal, border, bold-border, flat-emboss, material, flat-round !
           $button-color: $warning
         @else if $button-color-name == danger
           $button-color: $danger
+        @else if $button-color-name == info
+          $button-color: $info
         +button($button-style, $button-size, $button-color)
