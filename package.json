@@ -13,8 +13,5 @@
   "contributors": [
     "machida"
   ],
-  "license": "MIT",
-  "devDependencies": {
-    "bourbon": "~4.2.1"
-  }
+  "license": "MIT"
 }

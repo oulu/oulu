@@ -16,9 +16,6 @@
     "Rakefile",
     "Gemfile"
     ],
-  "devDependencies": {
-    "bourbon": "~4.2.1"
-  },
   "authors": [
     "machida"
   ],
