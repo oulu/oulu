@@ -6,8 +6,6 @@
   white-space: if(white_space($value), $value, null)
   display: if(display($value), $value, null)
   text-decoration: if(text_decoration($value), $value, null)
-  @if unit_number($value)
-    +top($value, null)
 
 // +text-block($font-size $line-height $margin-bottom, $font-weight $text-align $color $top)
 =text-block($value1: null, $value2: null)
@@ -17,6 +15,13 @@
   @if ($value2)
     @for $i from 1 through length($value2)
       +text-block-options(nth($value2, $i))
+      @if unit_number(nth($value2, $i))
+        @if index($value2, center)
+          letter-spacing: nth($value2, $i)
+          text-indent: nth($value2, $i)
+        @else
+          letter-spacing: nth($value2, $i)
+
 
 =letter-spacing-center($space-width: null)
   letter-spacing: $space-width
