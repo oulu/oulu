@@ -22,6 +22,15 @@
   @else
     @return null
 
+// tint & shade
+// http://bourbon.io/docs/#tint-shade
+
+@function tint($color, $percent)
+  @return mix(white, $color, $percent)
+
+@function shade($color, $percent)
+  @return mix(black, $color, $percent)
+
 // Adapted from: https://gist.github.com/voxpelli/6304812
 @function luma($color)
   $rgba: red($color), green($color), blue($color)
