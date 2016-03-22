@@ -7,7 +7,7 @@
   text-decoration: none
   -webkit-tap-highlight-color: transparent
 
-=button-size($size, $border-width: 0, $border-radius: 4px)
+=button-size($size, $border-width: false, $border-radius: 4px)
   $font-size: ""
   @if $size == 'xs'
     $font-size: $xs-button-font-size
@@ -19,7 +19,7 @@
     $font-size: $lg-button-font-size
   @else if $size == 'xl'
     $font-size: $xl-button-font-size
-  $button-height: round($font-size * 2 + $font-size/2.2)
+  $button-height: round($font-size * 2.5 - if($border-width, $border-width, 0) * 2)
   @if $border-width
     +border(all, $border-width)
   @else
@@ -74,9 +74,9 @@
     position: relative
     &:after
       +fa("\f0d7")
-      +position(absolute, right 0, top 0, 0)
+      +position(absolute, right 0, top 0 bottom 0, 0)
       +text-block($icon-size $button-height, center)
-      +size($icon-width $button-height)
+      +size($icon-width null)
     select
       padding: 0 (round($font-size * 1.4) + $icon-width) 0 round($font-size * 1.4)
       font-size: inherit
@@ -99,10 +99,19 @@
       +fa("\f00c")
       opacity: 0
       +size($check-icon-size)
-      +text-block($check-icon-size 1, white)
+      +text-block($check-icon-size 1, $checked-icon)
       text-shadow: rgba(black, .4) 0 1px 1px
       +position(absolute, left 14px, top 50%)
       margin-top: round($check-icon-size / -2 * 1.2)
+
+  // button-grounp
+  .is-button-group >li &
+    border-radius: 0
+  .is-button-group >li:first-child &
+    border-radius: $border-radius 0 0 $border-radius
+  .is-button-group  >li:last-child &
+    border-radius: 0 $border-radius $border-radius 0
+
 
 =button-group
   .is-button-group

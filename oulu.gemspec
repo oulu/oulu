@@ -20,6 +20,4 @@ Gem::Specification.new do |spec|
 
   spec.add_runtime_dependency("thor", "~> 0.19")
   spec.add_runtime_dependency("rake")
-  spec.add_runtime_dependency("sass", "~> 3.4.5")
-  spec.add_runtime_dependency("bourbon")
 end

@@ -14,6 +14,20 @@
   +fixed(left 50%, $block-z-index)
   margin-left: $block-width / 2 * -1
 
+=size($value)
+  $width: nth($value, 1)
+  $height: $width
+  @if length($value) > 1
+    $height: nth($value, 2)
+  @if is-size($height)
+    height: $height
+  @else
+    @warn "`#{$height}` is not a valid length for the `$height` parameter in the `size` mixin."
+  @if is-size($width)
+    width: $width
+  @else
+    @warn "`#{$width}` is not a valid length for the `$width` parameter in the `size` mixin."
+
 =overflow($values)
   $overflow-x: optional_nth($values, 1)
   $overflow-y: optional_nth($values, 2)
@@ -32,17 +46,3 @@
     clear: both
     content: ""
     display: table
-
-=size($value)
-  $width: nth($value, 1)
-  $height: $width
-  @if length($value) > 1
-    $height: nth($value, 2)
-  @if is-size($height)
-    height: $height
-  @else
-    @warn "`#{$height}` is not a valid length for the `$height` parameter in the `size` mixin."
-  @if is-size($width)
-    width: $width
-  @else
-    @warn "`#{$width}` is not a valid length for the `$width` parameter in the `size` mixin."

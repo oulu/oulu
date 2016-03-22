@@ -1,12 +1,12 @@
 @function time($value)
-  @if unit_number($value) and unit($value) == 's'
+  @if unit_number($value) and unit($value) == s
     @return true
   @else
     @return null
 
 @function timing_function($value)
   @if string($value)
-    @if $value == 'ease' or $value == 'linear' or $value == 'ease-in' or $value == 'ease-out' or $value == 'ease-in-out' or str-slice($value, 1, 12) == 'cubic-bezier'
+    @if $value == 'ease' or $value == 'linear' or $value == 'ease-in' or $value == 'ease-out' or $value == 'ease-in-out' or str-index($value, cubic-bezier)
       @return true
     @else
       @return null
@@ -14,8 +14,8 @@
     @return null
 
 @function delay($value)
-  @if string($value) and str-slice($value, 1, 1) == '/' and str-slice($value, -1, -1) == 's'
-    @return str-slice($value, 2)
+  @if list($value) and nth($value, 1) == delay
+    @return true
   @else
     @return null
 
