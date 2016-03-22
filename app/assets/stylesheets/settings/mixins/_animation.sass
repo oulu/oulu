@@ -1,28 +1,32 @@
-=animations($value1: null, $value2: null, $value3: null, $value4: null, $value5: null, $value6: null, $value7: null, $value8: null, $value9: null, $value10: null)
-  $list: $value1 $value2 $value3 $value4 $value5 $value6 $value7 $value8 $value9 $value10
-  $animation-names: ()
-  $animation-durations: ()
-  $animation-timing-functions: ()
-  $animation-delays: ()
-  $animation-iteration-counts: ()
-  $animation-directions: ()
-  $animation-fill-modes: ()
-  $animation-play-states: ()
-  @each $value in $list
-    @for $i from 1 through length($value)
-      $animation-names: append($animation-names, if(animation_name(nth($value, $i)), nth($value, $i), null), comma)
-      $animation-durations: append($animation-durations, if(animation_duration(nth($value, $i)), nth($value, $i), null), comma)
-      $animation-timing-functions: append($animation-timing-functions, if(animation_timing_function(nth($value, $i)), nth($value, $i), null), comma)
-      $animation-delays: append($animation-delays, if(animation_delay(nth($value, $i)), animation_delay(nth($value, $i)), null), comma)
-      $animation-iteration-counts: append($animation-iteration-counts, if(animation_iteration_count(nth($value, $i)), nth($value, $i), null), comma)
-      $animation-directions: append($animation-directions, if(animation_direction(nth($value, $i)), nth($value, $i), null), comma)
-      $animation-fill-modes: append($animation-fill-modes, if(animation_fill_mode(nth($value, $i)), nth($value, $i), null), comma)
-      $animation-play-states: append($animation-play-states, if(animation_play_state(nth($value, $i)), nth($value, $i), null), comma)
-  +animation-name($animation-names)
-  +animation_duration($animation-durations)
-  +animation_timing_function($animation-timing-functions)
-  +animation-delay($animation-delays)
-  +animation-iteration-count($animation-iteration-counts)
-  +animation-direction($animation-directions)
-  +animation-fill-mode($animation-fill-modes)
-  +animation-play-state($animation-play-states)
+=animation($values...)
+  $animation-values: ()
+  @each $value in $values
+    $animation-value: ()
+    $animation-name: ()
+    $animation-duration: ()
+    $animation-timing-function: ()
+    $animation-delay: ()
+    $animation-iteration-count: ()
+    $animation-direction: ()
+    $animation-fill-mode: ()
+    $animation-play-state: ()
+    @each $property in $value
+      @if animation_name($property)
+        $animation-name: $property
+      @else if animation_duration($property)
+        $animation-duration: $property
+      @else if animation_timing_function($property)
+        $animation-timing-function: $property
+      @else if animation_delay($property)
+        $animation-delay: nth($property, 2)
+      @else if animation_iteration_count($property)
+        $animation-iteration-count: $property
+      @else if animation_direction($property)
+        $animation-direction: $property
+      @else if animation_fill_mode($property)
+        $animation-fill-mode: $property
+      @else if animation_play_state($property)
+        $animation-play-state: $property
+      $animation-value: $animation-name $animation-duration $animation-delay $animation-iteration-count $animation-timing-function $animation-direction $animation-fill-mode $animation-play-state
+    $animation-values: append($animation-values, $animation-value, comma)
+  animation: $animation-values

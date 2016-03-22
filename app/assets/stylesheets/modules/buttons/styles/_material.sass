@@ -60,6 +60,12 @@
       background-color: $color
     box-shadow: shade($color, 18%) 0 2px 0
     +top(1px)
+  // disabled
+  &.is-disabled,
+  &:disabled
+    color: #9F9F9F
+    background-color: #DFDFDF
+    box-shadow: none
 
 .waves-effect
   +waves-effect($color: white)

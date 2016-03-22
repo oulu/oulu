@@ -1,33 +1,34 @@
-=bg-size($value)
-  @if list($value)
-    @if str-slice(nth($value, 1), 1, 1) == '/'
-      $bg-size-value: str-slice(nth($value, 1), 2) nth($value, 2)
-      +background-size($bg-size-value)
-    @else
-      +background-size($value)
-  @else
-    @if str-slice(nth($value, 1), 1, 1) == '/'
-      $bg-size-value: str-slice(nth($value, 1), 2)
-      +background-size($bg-size-value)
-    @else
-      +background-size($value)
-
-// どこでも background-color と background-image と background-position と background-repeat が書ける設定
-=background-basics($value)
-  @if background_color($value)
-    background-color: $value
-  @else if background_image($value)
-    background-image: image_url("#{$value}")
-  @else if background_position($value)
-    background-position: $value
-  @else if background_repeat($value)
-    background-repeat: $value
-  @else if background_attachment($value)
-    background-attachment: $value
-  @else if background_size($value)
-    +bg-size($value)
-
-// +bg(black 'image.png' (left center) no-repeat fixed (/ 20px 30px))
-=bg($value)
-  @for $i from 1 through length($value)
-    +background-basics(nth($value, $i))
+=background($values...)
+  $background-values: ()
+  @each $value in $values
+    $background-value: ()
+    $background-color: ()
+    $background-image: ()
+    $background-gradient: ()
+    $background-position: ()
+    $background-repeat: ()
+    $background-attachment: ()
+    $background-size: ()
+    $background-clip: ()
+    @each $property in $value
+      @if background_color($property)
+        $background-color: $property
+      @else if background_image($property)
+        $background-image: $property
+      @else if background_gradient($property)
+        $background-gradient: $property
+      @else if background_position($property)
+        $background-position: $property
+      @else if background_repeat($property)
+        $background-repeat: $property
+      @else if background_attachment($property)
+        $background-attachment: $property
+      @else if background_size($property)
+        $background-size: background_size($property)
+      @else if background_clip($property)
+        $background-clip: background_clip($property)
+      @if background-size != () and $background-position == ()
+        $background-position: (left top)
+      $background-value: $background-color $background-image $background-gradient $background-position $background-size $background-repeat $background-attachment $background-clip
+    $background-values: append($background-values, $background-value, comma)
+  background: $background-values

@@ -5,33 +5,22 @@
     @return null
 
 @function background_position($value)
-  @if list($value)
-    @if str-slice(nth($value, 1), 1, 1) != '/'
-      @if position(nth($value, 1)) or position(nth($value, 2))
-        @return true
-      @else if number(nth($value, 1)) or number(nth($value, 2))
-        @return true
-      @else
-        @return null
-    @else
-      @return null
+  @if list($value) and nth($value, 1) != size
+    @return true
   @else
     @return null
 
 @function background_size($value)
   @if string($value)
     @if $value == 'auto' or $value == 'contain' or $value == 'cover'
-      @return true
-    @else if str-slice($value, 2) == 'auto' or $value == 'contain' or $value == 'cover'
-      @return $value
+      @return unquote('/') $value
     @else
       @return null
   @else if list($value)
-    @if str-slice(nth($value, 1), 1, 1) == '/'
-      @if number(nth($value, 1)) or number(nth($value, 2))
-        @return true
-      @else
-        @return null
+    @if nth($value, 1) == size
+      @return unquote('/') nth($value, 2) nth($value, 3)
+    @else
+      @return null
   @else
     @return null
 
@@ -50,5 +39,23 @@
 @function background_image($value)
   @if image($value)
     @return true
+  @else
+    @return null
+
+@function background_gradient($value)
+  @if string($value)
+    @if str-index($value, linear-gradient) or str-index($value, radial-gradient) or str-index($value, repeating-)
+      @return true
+    @else
+      @return null
+  @else
+    @return null
+
+@function background_clip($value)
+  @if string($value)
+    @if $value == 'border' or $value == 'padding' or $value == 'content' or $value == 'text'
+      @return true
+    @else
+      @return null
   @else
     @return null

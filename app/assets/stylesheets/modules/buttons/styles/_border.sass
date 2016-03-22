@@ -19,17 +19,30 @@
   &.is-active
     color: luma_contrast_color($color)
     background-color: $color
-  &.is-checked
-    color: luma_contrast_color($color)
-    background-color: $color
+
+  // radio & checkbos
   &.is-radio,
   &.is-checkbox
     &:before
       box-shadow: $color 0 0 0 1px
-    &.is-checked
-      &:before
-        box-shadow: luma_contrast_color($color) 0 0 0 1px
+
+  // checked
+  &.is-checked
+    color: luma_contrast_color($checked)
+    background-color: $checked
+    border-color: shade($checked, 20%)
+    &:before
+      box-shadow: luma_contrast_color($checked) 0 0 0 1px
+
+  // select
   &.is-select
     &:after
       color: $color
       border-left: 1px solid $color
+
+  // disabled
+  &.is-disabled,
+  &:disabled
+    $color: if(luma_bright($color), shade($color, 20%), tint($color, 20%))
+    color: rgba($color, .7)
+    border-color: $color
