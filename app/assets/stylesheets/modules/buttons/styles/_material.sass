@@ -2,7 +2,7 @@
   +position(relative, 1)
   overflow: hidden
   will-change: opacity, transform
-  +transition(all .3s ease-out)
+  transition: all .3s ease-out
   .waves-ripple
     position: absolute
     border-radius: 50%
@@ -28,13 +28,13 @@
       background-color: lighten($color, 45%)
     @else
       background-color: darken($color, 20%)
-    +transition(all 0.7s ease-out)
+    transition: all 0.7s ease-out
     transition-property: transform, opacity
-    +transform(scale(0))
+    transform: scale(0)
     pointer-events: none
 
 =material-button($color: blue)
-  +transition(.2s ease-out)
+  transition: .2s ease-out
   +border-radius(2px)
   background-color: $color
   color: luma_contrast_color($color)
@@ -64,9 +64,9 @@
 .waves-effect
   +waves-effect($color: white)
 .waves-notransition
-  +transition(none #{"!important"})
+  transition: none !important
 .waves-circle
-  +transform(translateZ(0))
+  transform: translateZ(0)
   -webkit-mask-image: -webkit-radial-gradient(circle, white 100%, black 100%)
 .waves-input-wrapper
   border-radius: .2em

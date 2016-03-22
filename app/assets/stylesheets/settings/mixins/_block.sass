@@ -14,18 +14,6 @@
   +fixed(left 50%, $block-z-index)
   margin-left: $block-width / 2 * -1
 
-=square-block($values)
-  $square-block-size: optional_nth($values, 1)
-  $square-block-height: optional_nth($values, 2)
-  $square-block-line-height: optional_nth($values, 3)
-  +size($square-block-size if($square-block-height, $square-block-height, $square-block-size))
-  @if $square-block-line-height
-    line-height: $square-block-line-height
-  @else if $square-block-height
-    line-height: $square-block-height
-  @else
-    line-height: $square-block-size
-
 =overflow($values)
   $overflow-x: optional_nth($values, 1)
   $overflow-y: optional_nth($values, 2)
@@ -39,14 +27,22 @@
   display: inline-block
   vertical-align: $value
 
-=background-size($values)
-  +prefixer(background-size, $values, webkit moz spec)
+=clearfix
+  &::after
+    clear: both
+    content: ""
+    display: table
 
-=background-clip($value)
-  +prefixer(background-clip, $value, webkit moz spec)
-
-=box-shadow($values...)
-  box-shadow: $values
-
-=text-shadow($values...)
-  text-shadow: $values
+=size($value)
+  $width: nth($value, 1)
+  $height: $width
+  @if length($value) > 1
+    $height: nth($value, 2)
+  @if is-size($height)
+    height: $height
+  @else
+    @warn "`#{$height}` is not a valid length for the `$height` parameter in the `size` mixin."
+  @if is-size($width)
+    width: $width
+  @else
+    @warn "`#{$width}` is not a valid length for the `$width` parameter in the `size` mixin."

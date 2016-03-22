@@ -1,7 +1,7 @@
 =normal-button-color($color, $root-color: true)
   background-color: $color
-  +background-image(linear-gradient(top, tint($color, 6%) 0%, shade($color, 6%) 100%))
-  +border(all, solid)
+  background-image: linear-gradient(top, tint($color, 6%) 0%, shade($color, 6%) 100%)
+  border-style: solid
   border-color: shade($color, 10%) shade($color, 16%) shade($color, 26%)
   @if $root-color
     color: luma_contrast_color($color)

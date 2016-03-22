@@ -46,5 +46,5 @@
 
 =small-font($font-size)
   // 9px以下のfont-sizeを使う設定（IE8不可）
-  +transform(scale3d(strip_unit($font-size / 10), strip_unit($font-size/ 10), 1))
-  +transform-origin(0 0)
+  transform: scale3d(strip_unit($font-size / 10), strip_unit($font-size/ 10), 1)
+  transform-origin: 0 0
