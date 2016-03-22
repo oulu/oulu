@@ -1,6 +1,6 @@
 {
   "name": "oulu",
-  "version": "1.0.0.beta1",
+  "version": "0.10.1",
   "main": "index.js",
   "repository": {
     "type": "git",

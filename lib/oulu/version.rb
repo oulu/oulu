@@ -1,3 +1,3 @@
 module Oulu
-  VERSION = "1.0.0.beta1"
+  VERSION = "0.10.1"
 end
