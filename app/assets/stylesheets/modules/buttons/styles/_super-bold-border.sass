@@ -1,0 +1,63 @@
+=super-bold-border-button($color, $size)
+  $border-width: ""
+  @if $size == 'xs'
+    $border-width: $xs-button-font-size/3
+  @else if $size == 'sm'
+    $border-width: $sm-button-font-size/3
+  @else if $size == 'md'
+    $border-width: $md-button-font-size/3
+  @else if $size == 'lg'
+    $border-width: $lg-button-font-size/3
+  @else if $size == 'xl'
+    $border-width: $xl-button-font-size/3
+  border: solid $default-text $border-width
+  background-color: $color
+  color: luma_contrast_color($color)
+  box-shadow: rgba(black, 0.6) 0 1px 0 1px
+  &:link,
+  &:visited
+    color: luma_contrast_color($color)
+  &:hover,
+  &.hover,
+  &.is-hover
+    $color: if(luma_bright($color), shade($color, 20%), tint($color, 20%))
+    color: luma_contrast_color($color)
+    background-color: $color
+  &:active,
+  &.active,
+  &.is-active
+    color: luma_contrast_color($color)
+    background-color: $color
+    +top(1px)
+    box-shadow: none
+
+  // radio & checkbos
+  &.is-radio,
+  &.is-checkbox
+    &:before
+      box-shadow: $default-text 0 0 0 2px
+
+  // checked
+  &.is-checked
+    color: luma_contrast_color($checked)
+    background-color: $checked
+    +top(1px)
+    box-shadow: none
+    &:before
+      box-shadow: luma_contrast_color($checked) 0 0 0 2px
+
+  // select
+  &.is-select
+    &:after
+      color: rgba(luma_contrast_color($color), .7)
+      border-left: 2px solid
+      border-left-color: rgba($default-text, .7)
+
+  // disabled
+  &.is-disabled,
+  &:disabled
+    $color: if(luma_bright($color), shade($color, 20%), tint($color, 20%))
+    color: rgba(luma_contrast_color($color), .7)
+    background-color: rgba($color, .7)
+    border-color: rgba($default-text, .7)
+    box-shadow: none

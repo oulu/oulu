@@ -42,8 +42,8 @@
   @each $button-color-name in $button-color-names
     @each $button-style in $button-styles
       .is-button-#{$button-style}-#{$button-size}-#{$button-color-name}
-        @if $button-color-name == default
-          $button-color: $default
+        @if $button-color-name == secondary
+          $button-color: $secondary
         @else if $button-color-name == primary
           $button-color: $primary
         @else if $button-color-name == success
