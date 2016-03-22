@@ -37,12 +37,6 @@
     cursor: default
     select
       cursor: default
-  .is-button-group >li &
-    border-radius: 0
-  .is-button-group >li:first-child &
-    border-radius: 4px 0 0 4px
-  .is-button-group  >li:last-child &
-    border-radius: 0 4px 4px 0
   &.is-select
     select
       vertical-align: middle
@@ -57,14 +51,6 @@
     display: inline-block
     letter-spacing: normal
     font-size: 0
-    [class^="is-button"]
-      border-radius: 0
-    &:first-child
-      [class^="is-button"]
-        +border-radius(left, 4px)
-    &:last-child
-      [class^="is-button"]
-        +border-radius(right, 4px)
   @for $i from 1 through 12
     &.is-#{$i}-items
       >li

@@ -6,6 +6,7 @@
 @import styles/flat-emboss
 @import styles/material
 @import styles/flat-round
+@import styles/super-bold-border
 
 @import button-helper
 
@@ -27,8 +28,11 @@
     +button-size($size, false, false)
     +material-button($color)
   @else if $style == flat-round
-    +button-size($size, false, false)
+    +button-size($size, false, 1000px)
     +flat-round-button($color)
+  @else if $style == super-bold-border
+    +button-size($size, false, 3px)
+    +super-bold-border-button($color, $size)
   @each $option in $options
     @if $option == 'left'
       text-align: left
@@ -42,8 +46,8 @@
   @each $button-color-name in $button-color-names
     @each $button-style in $button-styles
       .is-button-#{$button-style}-#{$button-size}-#{$button-color-name}
-        @if $button-color-name == default
-          $button-color: $default
+        @if $button-color-name == secondary
+          $button-color: $secondary
         @else if $button-color-name == primary
           $button-color: $primary
         @else if $button-color-name == success

@@ -1,9 +1,8 @@
 =flat-round-button($color: blue)
-  +transition(.5s (background-image))
+  transition: .5s (background-image)
   background-color: $color
   color: luma_contrast_color($color)
   font-weight: bold
-  border-radius: 1000px
   &:hover,
   &.hover,
   &.is-hover
@@ -21,3 +20,33 @@
     @else
       background-color: $color
     +top(1px)
+
+  // radio & checkbos
+  &.is-radio,
+  &.is-checkbox
+    &:before
+      box-shadow: rgba(black, 0.2) 0 1px 1px inset
+      background-color: #{if(luma_bright($color), shade($color, 20%), tint($color, 20%))}
+
+  // checked
+  &.is-checked
+    color: luma_contrast_color($checked)
+    background-color: $checked
+    +top(1px)
+    &:before
+      box-shadow: rgba(black, 0.3) 0 1px 1px inset
+      background-color: #{if(luma_bright($checked), shade($checked, 40%), tint($checked, 40%))}
+
+  // select
+  &.is-select
+    &:after
+      color: rgba(luma_contrast_color($color), .7)
+      border-left: 1px solid
+      border-left-color: #{if(luma_bright($color), shade($color, 20%), tint($color, 20%))}
+
+  // disabled
+  &.is-disabled,
+  &:disabled
+    $color: if(luma_bright($color), shade($color, 20%), tint($color, 20%))
+    background-color: rgba($color, 7)
+    color: rgba(luma_contrast_color($color), .7)
