@@ -19,14 +19,15 @@
     $font-size: $lg-button-font-size
   @else if $size == 'xl'
     $font-size: $xl-button-font-size
-  $height: round($font-size * 2 + $font-size/2.2)
+  $button-height: round($font-size * 2 + $font-size/2.2)
   @if $border-width
     +border(all, $border-width)
   @else
     $border-width: 0
-  +text-block($font-size $height - ($border-width*2))
-  height: $height
-  +padding(horizontal, $height/1.6)
+  $vertical-padding: ($button-height - round($font-size * 1.45) - ($border-width* 2)) / 2
+  +padding(vertical, $vertical-padding)
+  +text-block($font-size 1.45)
+  +padding(horizontal, $button-height/1.6)
   @if $border-radius
     +border-radius($border-radius)
   @if $font-size > 12px
@@ -50,11 +51,58 @@
     position: relative
     i,
     .is-button-icon
-      +position(absolute, left $height/2, top 0)
-      line-height: $height - ($border-width*2)
+      +position(absolute, left $button-height/2, top 0)
+      line-height: $button-height - ($border-width*2)
     input
-      +padding(horizontal, ($height + if($font-size > 28, $font-size/4, $font-size/3)) $height/2)
-      height: $height - ($border-width*2)
+      +padding(horizontal, ($button-height + if($font-size > 28, $font-size/4, $font-size/3)) $button-height/2)
+      height: $button-height - ($border-width*2)
+  &.is-dummy-select
+    $icon-width: round($font-size * 2.7)
+    $icon-size: round($font-size * 1.3)
+    $button-height: $button-height
+    padding-left: $icon-width
+    &:before
+      +fa("\f0d7")
+      +position(absolute, left 0, top 0)
+      border-right: 1px solid shade($default, 15%)
+      +text-block($icon-size $button-height, center shade($default, 55%))
+      +size($icon-width $button-height)
+  &.is-select
+    padding: 0
+    $icon-width: round($font-size * 2.7)
+    $icon-size: round($font-size * 1.3)
+    position: relative
+    &:after
+      +fa("\f0d7")
+      +position(absolute, right 0, top 0, 0)
+      +text-block($icon-size $button-height, center)
+      +size($icon-width $button-height)
+    select
+      padding: 0 (round($font-size * 1.4) + $icon-width) 0 round($font-size * 1.4)
+      font-size: inherit
+      +padding(vertical, $vertical-padding)
+      +position(relative, 1)
+  &.is-radio,
+  &.is-checkbox
+    $icon-space: round($font-size * 2.2)
+    padding-left: $icon-space
+    position: relative
+    &:before
+      content: ""
+      display: block
+      +position(absolute, left 16px, top 50%)
+      $check-base-size: round($font-size * .9)
+      +size($check-base-size)
+      margin-top: round($check-base-size / -2)
+    &:after
+      $check-icon-size: round($font-size * 1.4)
+      +fa("\f00c")
+      opacity: 0
+      +size($check-icon-size)
+      +text-block($check-icon-size 1, white)
+      text-shadow: rgba(black, .4) 0 1px 1px
+      +position(absolute, left 14px, top 50%)
+      margin-top: round($check-icon-size / -2 * 1.2)
 
 =button-group
   .is-button-group

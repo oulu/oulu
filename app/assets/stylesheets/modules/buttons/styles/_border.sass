@@ -13,12 +13,23 @@
   &.hover,
   &.is-hover
     color: $color
-    background-color: rgba($color, .1)
+    background-color: rgba($color, .2)
   &:active,
   &.active,
   &.is-active
-    color: $color
-    background-color: rgba($color, .3)
+    color: luma_contrast_color($color)
+    background-color: $color
   &.is-checked
     color: luma_contrast_color($color)
     background-color: $color
+  &.is-radio,
+  &.is-checkbox
+    &:before
+      box-shadow: $color 0 0 0 1px
+    &.is-checked
+      &:before
+        box-shadow: luma_contrast_color($color) 0 0 0 1px
+  &.is-select
+    &:after
+      color: $color
+      border-left: 1px solid $color
