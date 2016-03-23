@@ -19,7 +19,7 @@
     $font-size: $lg-button-font-size
   @else if $size == 'xl'
     $font-size: $xl-button-font-size
-  $button-height: round($font-size * 2.5 - if($border-width, $border-width, 0) * 2)
+  $button-height: round($font-size * 2.85 - if($border-width, $border-width, 0) * 2)
   @if $border-width
     +border(all, $border-width)
   @else
