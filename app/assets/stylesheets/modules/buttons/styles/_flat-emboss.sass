@@ -32,14 +32,14 @@
 
   // checked
   &.is-checked
-    color: luma_contrast_color($checked)
-    background-color: $checked
-    text-shadow: if(luma_bright($checked), lighten($checked, 8%) 0 1px 0, darken($checked, 8%) 0 -1px 0)
-    box-shadow: shade($checked, 18%) 0 2px 0
+    color: luma_contrast_color($button-checked-color)
+    background-color: $button-checked-color
+    text-shadow: if(luma_bright($button-checked-color), lighten($button-checked-color, 8%) 0 1px 0, darken($button-checked-color, 8%) 0 -1px 0)
+    box-shadow: shade($button-checked-color, 18%) 0 2px 0
     +top(1px)
     &:before
-      box-shadow: rgba(black, 0.3) 0 1px 1px inset, #{if(luma_bright($checked), shade($checked, 40%), tint($checked, 40%))} 0 0 0 1px
-      background-color: #{if(luma_bright($checked), shade($checked, 30%), tint($checked, 30%))}
+      box-shadow: rgba(black, 0.3) 0 1px 1px inset, #{if(luma_bright($button-checked-color), shade($button-checked-color, 40%), tint($button-checked-color, 40%))} 0 0 0 1px
+      background-color: #{if(luma_bright($button-checked-color), shade($button-checked-color, 30%), tint($button-checked-color, 30%))}
 
   // select
   &.is-select

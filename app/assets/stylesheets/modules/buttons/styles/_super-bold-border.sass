@@ -39,12 +39,12 @@
 
   // checked
   &.is-checked
-    color: luma_contrast_color($checked)
-    background-color: $checked
+    color: luma_contrast_color($button-checked-color)
+    background-color: $button-checked-color
     +top(1px)
     box-shadow: none
     &:before
-      box-shadow: luma_contrast_color($checked) 0 0 0 2px
+      box-shadow: luma_contrast_color($button-checked-color) 0 0 0 2px
 
   // select
   &.is-select
