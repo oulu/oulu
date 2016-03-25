@@ -1,13 +1,4 @@
 /////////////////
-// brand colors
-////////////////
-
-$base-color: white !default
-$main-color: #4FC1E9 !default
-$sub-color: #FFCE54 !default
-$accent-color: #FC6E51 !default
-
-/////////////////
 // UI colors
 ////////////////
 
@@ -18,11 +9,11 @@ $info: #37bc9b !default
 $warning: #f6bb42 !default
 $danger: #da4453 !default
 
-$primary-text: luma_add_contrast($base-color, $primary) !default
-$info-text: luma_add_contrast($base-color, $info) !default
-$success-text: luma_add_contrast($base-color, $success) !default
-$warning-text: luma_add_contrast($base-color, $warning) !default
-$danger-text: luma_add_contrast($base-color, $danger) !default
+$primary-text: luma_add_contrast($root-background-color, $primary) !default
+$info-text: luma_add_contrast($root-background-color, $info) !default
+$success-text: luma_add_contrast($root-background-color, $success) !default
+$warning-text: luma_add_contrast($root-background-color, $warning) !default
+$danger-text: luma_add_contrast($root-background-color, $danger) !default
 $faint-text: gray !default
 
 /////////////////
@@ -39,8 +30,17 @@ $button-sizes: xs, sm, md, lg, xl !default
 $button-color-names: secondary, primary, success, info, warning, danger !default
 $button-styles: normal, border, bold-border, flat-emboss, material, flat-round, super-bold-border !default
 
-$checked: shade($main-color, 30%)
-$checked-icon: $sub-color
+$checked: #4FC1E9 !default
+$checked-icon: #FC6E51 !default
+
+/////////////////
+// SNS colors
+////////////////
+
+$twitter: #55acee !default
+$facebook: #3b5998 !default
+$hatena: #008FDE !default
+$pocket: #f23c53 !default
 
 /////////////////
 // tab navs
