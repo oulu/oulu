@@ -33,14 +33,14 @@
     $x: 1 / $n * (($n - 1) * $x + ($num / pow($x, $n - 1)))
   @return $x
 
-@function ratio($n1, $n2, $n3)
+@function ratio_calculation($n1, $n2, $n3)
   @return ($n2 * $n3) / $n1
 
-@function second_decimal_place_foor($n)
-  @return(floor($n * 10) / 10)
+@function second_decimal_place_floor($num)
+  @return floor($num * 10) / 10
 
-@function second_decimal_place_ceil($n)
-  @return(ceil($n * 10) / 10)
+@function second_decimal_place_ceil($num)
+  @return ceil($num * 10) / 10
 
-@function second_decimal_place_round($n)
-  @return(round($n * 10) / 10)
+@function second_decimal_place_round($num)
+  @return round($num * 10) / 10
