@@ -30,3 +30,7 @@
       $animation-value: $animation-name $animation-duration $animation-delay $animation-iteration-count $animation-timing-function $animation-direction $animation-fill-mode $animation-play-state
     $animation-values: append($animation-values, $animation-value, comma)
   animation: $animation-values
+
+=keyframes($animation-name)
+  @keyframes $animation-name
+    @content
