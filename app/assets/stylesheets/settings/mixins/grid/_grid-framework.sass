@@ -9,7 +9,6 @@
 
 =make-row($gutter: $grid-gutter-width)
   display: flex
-  flex-direction: row
   flex-wrap: wrap
   +margin(horizontal, $gutter / -2)
 
@@ -20,6 +19,7 @@
 
 =make-col-span($size, $columns: $grid-columns)
   flex: 0 0 percentage($size / $columns)
+  width: percentage($size / $columns)
 
 =make-col-offset($size, $columns: $grid-columns)
   margin-left: percentage($size / $columns)
