@@ -1,4 +1,4 @@
-$luma-threshold: 13 !default
+$luma-threshold: 30 !default
 
 @function color($value)
   @if type-of($value) == color
@@ -85,6 +85,6 @@ $luma-threshold: 13 !default
     @return $candidate-color
   @else
     @if luma_dark($background-color)
-      @return tint($candidate-color, reverse(percentage(luma_value($background-color, $candidate-color)*0.01))/1.618)
+      @return tint($candidate-color, reverse(percentage(luma_value($background-color, $candidate-color)*0.01))/1.15)
     @else
-      @return shade($candidate-color, reverse(percentage(luma_value($background-color, $candidate-color)*0.01))/1.618)
+      @return shade($candidate-color, reverse(percentage(luma_value($background-color, $candidate-color)*0.01))/1.15)
