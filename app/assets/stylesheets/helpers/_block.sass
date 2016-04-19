@@ -9,19 +9,6 @@ body
   .is-clearfix
     +clearfix
 
-  // width
-  .is-max-width-100
-    width: 100%
-    display: block
-  .is-half
-    width: 50%
-
-  // float
-  .is-left
-    float: left
-  .is-right
-    float: right
-
   // float
   .is-float-left
     float: left
@@ -50,37 +37,29 @@ body
     overflow: hidden
 
   // position
-  .is-relative
+  .is-position-relative
     position: relative
-  .is-fixed-default
-    +fixed(left 0, top 0)
-    width: 100%
-  .is-z-index-100
-    +position(relative, 100)
 
   // vertical-align
-  .is-vertical-middle
+  .is-vertical-align-middle
     vertical-align: middle !important
-  .is-vertical-top
+  .is-vertical-align-top
     vertical-align: top !important
-  .is-vertical-bottom
+  .is-vertical-align-bottom
     vertical-align: bottom !important
 
   // display
-  .is-block
+  .is-display-block
     display: block
   .is-display-none
     display: none
   .is-display-none-important
     display: none !important
-  .is-inline-block
+  .is-display-inline-block
     display: inline-block
-  .is-inline
+  .is-display-inline
     display: inline
-  .is-table-row
+  .is-display-table-row
     display: table-row !important
-  .is-table-cell
+  .is-display-table-cell
     display: table-cell !important
-  .is-inline-blocks
-    >*
-      display: inline-block

@@ -5,11 +5,9 @@
 // original https://github.com/bitmanic/rem
 // customize by machida
 
-$baseline-px: $root-font-size !default
-
 =rem($property, $px-values, $important: null)
   // Convert the baseline into rems
-  $baseline-rem: $baseline-px / 1rem
+  $baseline-rem: $base-px / 1rem
   // remが使えないブラウザ用にpx版を出力
   @if $important
     #{$property}: $px-values !important

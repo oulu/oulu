@@ -1,70 +1,14 @@
 body
-  @for $i from 0 through 20
-    .is-margin-bottom-#{$i*4px}
-      margin-bottom: $i*4px
-    .is-margin-top-#{$i*4px}
-      margin-top: $i*4px
-    .is-margin-left-#{$i*4px}
-      margin-left: $i*4px
-    .is-margin-right-#{$i*4px}
-      margin-right: $i*4px
-    .is-margin-horizontal-#{$i*4px}
-      +margin(horizontal, $i*4px)
-    .is-padding-bottom-#{$i*4px}
-      padding-bottom: $i*4px
-    .is-padding-top-#{$i*4px}
-      padding-top: $i*4px
-    .is-padding-left-#{$i*4px}
-      padding-left: $i*4px
-    .is-padding-right-#{$i*4px}
-      padding-right: $i*4px
-    .is-padding-horizontal-#{$i*4px}
-      +padding(horizontal, $i*4px)
-
-  // horizontal-margin-0
-  .is-horizontal-margin-0
-    +margin(horizontal, 0)
-  .is-xs-horizontal-margin-0
-    +media-breakpoint-down(xs)
-      +margin(horizontal, 0)
-  .is-sm-horizontal-margin-0
-    +media-breakpoint-down(sm)
-      +margin(horizontal, 0)
-  .is-md-horizontal-margin-0
-    +media-breakpoint-down(md)
-      +margin(horizontal, 0)
-  .is-lg-horizontal-margin-0
-    +media-breakpoint-down(lg)
-      +margin(horizontal, 0)
-
-  // horizontal-padding-0
-  .is-horizontal-padding-0
-    +padding(horizontal, 0)
-  .is-xs-horizontal-padding-0
-    +media-breakpoint-down(xs)
-      +padding(horizontal, 0)
-  .is-sm-horizontal-padding-0
-    +media-breakpoint-down(sm)
-      +padding(horizontal, 0)
-  .is-md-horizontal-padding-0
-    +media-breakpoint-down(md)
-      +padding(horizontal, 0)
-  .is-lg-horizontal-padding-0
-    +media-breakpoint-down(lg)
-      +padding(horizontal, 0)
-
-// こっちに変更
-body
-  @for $i from 0 through 20
+  @for $i from 1 through 20
     .has-margin-bottom-#{$i*4px}
       margin-bottom: $i*4px
-    .has-margin-top-#{$i*4}
+    .has-margin-top-#{$i*4px}
       margin-top: $i*4px
-    .has-margin-left-#{$i*4}
+    .has-margin-left-#{$i*4px}
       margin-left: $i*4px
-    .has-margin-right-#{$i*4}
+    .has-margin-right-#{$i*4px}
       margin-right: $i*4px
-    .has-margin-horizontal-#{$i*4}
+    .has-margin-horizontal-#{$i*4px}
       +margin(horizontal, $i*4px)
     .has-padding-bottom-#{$i*4px}
       padding-bottom: $i*4px
@@ -77,34 +21,61 @@ body
     .has-padding-horizontal-#{$i*4px}
       +padding(horizontal, $i*4px)
 
+body
+  @for $i from 1 through 20
+    $rem-value: #{px_to_rem($i*4px)}
+    $rem-value-class: dot_to_underscore($rem-value)
+    .has-margin-bottom-#{$rem-value-class}
+      margin-bottom: $rem-value
+    .has-margin-top-#{$rem-value-class}
+      margin-top: $rem-value
+    .has-margin-left-#{$rem-value-class}
+      margin-left: $rem-value
+    .has-margin-right-#{$rem-value-class}
+      margin-right: $rem-value
+    .has-margin-horizontal-#{$rem-value-class}
+      +margin(horizontal, $rem-value)
+    .has-padding-bottom-#{$rem-value-class}
+      padding-bottom: $rem-value
+    .has-padding-top-#{$rem-value-class}
+      padding-top: $rem-value
+    .has-padding-left-#{$rem-value-class}
+      padding-left: $rem-value
+    .has-padding-right-#{$rem-value-class}
+      padding-right: $rem-value
+    .has-padding-horizontal-#{$rem-value-class}
+      +padding(horizontal, $rem-value)
+
+body
   // horizontal-margin-0
   .has-horizontal-margin-0
     +margin(horizontal, 0)
-  .has-xs-horizontal-margin-0
+  .has-horizontal-margin-0-xs-down
     +media-breakpoint-down(xs)
       +margin(horizontal, 0)
-  .has-sm-horizontal-margin-0
+  .has-horizontal-margin-0-sm-down
     +media-breakpoint-down(sm)
       +margin(horizontal, 0)
-  .has-md-horizontal-margin-0
+  .has-horizontal-margin-0-md-down
     +media-breakpoint-down(md)
       +margin(horizontal, 0)
-  .has-lg-horizontal-margin-0
+  .has-horizontal-margin-0-lg-down
     +media-breakpoint-down(lg)
       +margin(horizontal, 0)
 
+body
   // horizontal-padding-0
   .has-horizontal-padding-0
     +padding(horizontal, 0)
-  .has-xs-horizontal-padding-0
+  .has-horizontal-padding-0-xs-down
     +media-breakpoint-down(xs)
       +padding(horizontal, 0)
-  .has-sm-horizontal-padding-0
+  .has-horizontal-padding-0-sm-down
     +media-breakpoint-down(sm)
       +padding(horizontal, 0)
-  .has-md-horizontal-padding-0
+  .has-horizontal-padding-0-md-down
     +media-breakpoint-down(md)
       +padding(horizontal, 0)
-  .has-lg-horizontal-padding-0
+  .has-horizontal-padding-0-lg-down
     +media-breakpoint-down(lg)
       +padding(horizontal, 0)
