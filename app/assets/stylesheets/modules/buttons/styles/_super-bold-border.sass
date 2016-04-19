@@ -1,19 +1,18 @@
 =super-bold-border-button($color, $size)
   $border-width: ""
   @if $size == 'xs'
-    $border-width: $xs-button-font-size/3
+    $border-width: $xs-button-font-size/5
   @else if $size == 'sm'
-    $border-width: $sm-button-font-size/3
+    $border-width: $sm-button-font-size/4.5
   @else if $size == 'md'
-    $border-width: $md-button-font-size/3
+    $border-width: $md-button-font-size/4
   @else if $size == 'lg'
-    $border-width: $lg-button-font-size/3
+    $border-width: $lg-button-font-size/3.5
   @else if $size == 'xl'
     $border-width: $xl-button-font-size/3
-  border: solid $default-text $border-width
   background-color: $color
   color: luma_contrast_color($color)
-  box-shadow: rgba(black, 0.6) 0 1px 0 1px
+  box-shadow: rgba(black, 0.6) 0 1px 0 1px, $default-text 0 0 0 $border-width inset
   &:link,
   &:visited
     color: luma_contrast_color($color)
@@ -29,13 +28,13 @@
     color: luma_contrast_color($color)
     background-color: $color
     +top(1px)
-    box-shadow: none
+    box-shadow: $default-text 0 0 0 $border-width inset
 
   // radio & checkbos
   &.is-radio,
   &.is-checkbox
     &:before
-      box-shadow: $default-text 0 0 0 2px
+      box-shadow: $default-text 0 0 0 2px, $default-text 0 0 0 $border-width inset
 
   // checked
   &.is-checked
@@ -44,7 +43,7 @@
     +top(1px)
     box-shadow: none
     &:before
-      box-shadow: luma_contrast_color($button-checked-color) 0 0 0 2px
+      box-shadow: luma_contrast_color($button-checked-color) 0 0 0 2px, $default-text 0 0 0 $border-width inset
 
   // select
   &.is-select
@@ -60,4 +59,4 @@
     color: rgba(luma_contrast_color($color), .7)
     background-color: rgba($color, .7)
     border-color: rgba($default-text, .7)
-    box-shadow: none
+    box-shadow: $default-text 0 0 0 $border-width inset
