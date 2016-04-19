@@ -68,6 +68,7 @@
   &:disabled
     $color: if(luma_bright($color), shade($color, 20%), tint($color, 20%))
     background-color: rgba($color, 7)
+    background-image: none 
     color: rgba(luma_contrast_color($color), .7)
     border-color: shade($color, 10%) shade($color, 16%) shade($color, 26%)
     text-shadow: none

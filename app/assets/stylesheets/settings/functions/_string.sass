@@ -3,3 +3,22 @@
     @return true
   @else
     @return null
+
+// https://gist.github.com/hail2u/6101358
+@function str-replace($string, $substr, $newsubstr, $all: 0)
+  $position-found: str-index($string, $substr)
+  @if $position-found
+    @while $position-found > 0
+      $length-substr: str-length($substr)
+      $string-pre: str-slice($string, 0, $position-found - 1)
+      $string-post: str-slice($string, $position-found + $length-substr)
+      $string: $string-pre + $newsubstr + $string-post
+      $position-found: 0
+      @if $all > 0
+        $position-found: str-index($string, $substr)
+    @return $string
+  @else
+    @return $string
+
+@function dot_to_underscore($string)
+  @return str-replace($string, ".", "_")
