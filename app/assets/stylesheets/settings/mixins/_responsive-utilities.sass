@@ -62,15 +62,15 @@
     @each $scope in $scopes
       @if $scope == down and $size != xl
         +media-breakpoint-down($size)
-          is-hidden-#{$size}-#{$scope}
+          .is-hidden-#{$size}-#{$scope}
             display: none !important
       @else if $scope == up and $size != xs
         +media-breakpoint-up($size)
-          is-hidden-#{$size}-#{$scope}
+          .is-hidden-#{$size}-#{$scope}
             display: none !important
       @else if $scope == only
         +media-breakpoint-only($size)
-          is-hidden-#{$size}-#{$scope}
+          .is-hidden-#{$size}-#{$scope}
             display: none !important
 
 +visible-settings
