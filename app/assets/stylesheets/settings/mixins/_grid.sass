@@ -29,7 +29,7 @@
 //
 // Common styles for small and large grid columns
 
-.row>[class^=col-]
+.row>[class*=col-]
   position: relative
   // Prevent columns from collapsing when empty
   min-height: 1px
@@ -158,7 +158,7 @@
 // helper
 .row
   @for $i from 0 through 16
-    $gutter-size: $i * 4
+    $gutter-size: $i * 1rem
     &.is-gutter-width-#{$gutter-size}#{if($gutter-size == 0, null, rem)}
       +margin(horizontal, $gutter-size / 2 * -1)
       >*
