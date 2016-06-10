@@ -1,0 +1,37 @@
+@charset "UTF-8"
+
+// https://github.com/thoughtbot/bourbon/blob/master/core/bourbon/utilities/_assign-inputs.scss
+
+/// Append pseudo-classes to a selector(s).
+///
+/// @argument {list | string} $inputs
+///   A selector, or list of selectors, to apply the pseudo-class to.
+///
+/// @argument {pseudo-class} $pseudo [null]
+///   The pseudo-class to be appended.
+///
+/// @return {list}
+///
+/// @access private
+
+@function _assign-inputs($inputs, $pseudo: null)
+  $list: ()
+  @each $input in $inputs
+    $input: unquote($input)
+    $input: if($pseudo, $input + ":" + $pseudo, $input)
+    $list: append($list, $input, comma)
+  @return $list
+
+/////////////////
+// text-inputs
+////////////////
+
+$text-inputs-list: 'input[type="color"]','input[type="date"]','input[type="datetime"]','input[type="datetime-local"]','input[type="email"]','input[type="month"]','input[type="number"]','input[type="password"]','input[type="search"]','input[type="tel"]','input[type="text"]','input[type="time"]','input[type="url"]','input[type="week"]','input:not([type])','textarea' !default
+
+$all-text-inputs: assign-inputs($text-inputs-list)
+$all-text-inputs-active: assign-inputs($text-inputs-list, active)
+$all-text-inputs-focus: assign-inputs($text-inputs-list, focus)
+$all-text-inputs-hover: assign-inputs($text-inputs-list, hover)
+
+$inputs-en-list: 'input[type="email"]', 'input[type="number"]', 'input[type="search"]', 'input[type="tel"]', 'input[type="url"]', 'input[type="color"]', 'input[type="date"]', 'input[type="datetime"]', 'input[type="datetime-local"]', 'input[type="time"]'
+$all-en-text-inputs: assign-inputs($inputs-en-list)

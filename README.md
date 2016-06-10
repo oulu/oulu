@@ -13,8 +13,8 @@ oulu is a sass mixin libraly.
 @import oulu-functions-before-variables
 
 // oulu-variables and yours
-@import oulu-variables
 @import {your variables}
+@import oulu-variables
 
 // oulu-functions-after-variables (functions need variables)
 @import oulu-functions-after-variables
