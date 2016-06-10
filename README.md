@@ -6,6 +6,36 @@ oulu is a sass mixin libraly.
 
 [docs](http://oulu.github.io/)
 
+## import
+
+```
+// oulu-functions-before-variables
+@import oulu-functions-before-variables
+
+// oulu-variables and yours
+@import oulu-variables
+@import {your variables}
+
+// oulu-functions-after-variables (functions need variables)
+@import oulu-functions-after-variables
+
+// oulu-mixins
+@import oulu-mixins
+
+// oulu-initializers
+@import oulu-initializers
+
+// oulu-helpers
+@import oulu-helpers
+
+// oulu-modules
+@import modules/web-fonts/font-awsome
+@import modules/web-fonts/montserrat
+@import modules/web-fonts/satisfy
+@import modules/web-fonts/icomoon
+
+```
+
 ## Contributing
 
 1. Fork it

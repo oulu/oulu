@@ -158,8 +158,8 @@
 // helper
 .row
   @for $i from 0 through 16
-    $gutter-size: $i * 1rem
-    &.is-gutter-width-#{$gutter-size}#{if($gutter-size == 0, null, rem)}
-      +margin(horizontal, $gutter-size / 2 * -1)
-      >*
-        +padding(horizontal, $gutter-size / 2 * 1)
+    $gutter-size: $i * 4
+    &.is-gutter-width-#{$gutter-size}
+      +margin(horizontal, px_to_rem($gutter-size * 1px, $base-px) / -2)
+      >[class*=col-]
+        +padding(horizontal, px_to_rem($gutter-size * 1px, $base-px) / 2)
