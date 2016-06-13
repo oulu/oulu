@@ -20,6 +20,8 @@
 =make-col-span($size, $columns: $grid-columns)
   flex: 0 0 percentage($size / $columns)
   width: percentage($size / $columns)
+  // for firefox bug
+  max-width: percentage($size / $columns)
 
 =make-col-offset($size, $columns: $grid-columns)
   margin-left: percentage($size / $columns)
