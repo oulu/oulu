@@ -10,11 +10,11 @@ body
     +sans-serif
 
   @for $i from 0 through 24
-    $value: $i/10
-    .is-letter-specing-#{$i}px
+    $value: px_to_rem($i * 1px)
+    .is-letter-specing-#{$i}
       letter-spacing: $value
-    .is-letter-specing-center-#{$i}px
-      letter-spacing: $value
+    .is-letter-specing-center-#{$i}
+      letter-spacing: $value * -1
       text-indent: $value
 
   .is-white-space-nowrap

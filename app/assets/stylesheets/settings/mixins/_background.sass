@@ -26,7 +26,7 @@
       @else if background_size($property)
         $background-size: background_size($property)
       @else if background_clip($property)
-        $background-clip: background_clip($property)
+        $background-clip: $property
       @if background-size != () and $background-position == ()
         $background-position: (left top)
       $background-value: $background-color $background-image $background-gradient $background-position $background-size $background-repeat $background-attachment $background-clip

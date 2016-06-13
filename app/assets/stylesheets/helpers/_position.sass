@@ -1,18 +1,33 @@
-@for $i from -8 through 8
-  .is-top-#{$i}px
-    +top(#{$i}px)
-  .is-bottom-#{$i}px
-    +top(#{$i}px)
-  .is-left-#{$i}px
-    +left(#{$i}px)
-  .is-right-#{$i}px
-    +right(#{$i}px)
+=assign-position($direction, $n-px)
+  @if $direction == top
+    +top($n-px)
+  @else if $direction == bottom
+    +bottom($n-px)
+  @else if $direction == left
+    +left($n-px)
+  @else if $direction == right
+    +right($n-px)
 
-  .is-top-#{px_to_rem($i)}rem
-    +top(#{px_to_rem($i)}rem)
-  .is-bottom-#{px_to_rem($i)}rem
-    +top(#{px_to_rem($i)}rem)
-  .is-left-#{px_to_rem($i)}rem
-    +left(#{px_to_rem($i)}rem)
-  .is-right-#{px_to_rem($i)}rem
-    +right(#{px_to_rem($i)}rem)
+@for $i from -8 through 8
+  $n: $i*4
+  $n-px: px_to_rem($n*1px)
+  $directions: top, bottom, left, right
+  $breakpoints: xs, sm, md, lg, xl, false
+  $scopes: up, down
+  @each $direction in $directions
+    @each $breakpoint in $breakpoints
+      @each $scope in $scopes
+        @if $breakpoint
+          .is-#{$direction}-#{$n}-#{$breakpoint}-#{$scope}
+            @if $scope == up
+              +media-breakpoint-up($breakpoint)
+                +assign-position($direction, $n-px)
+            @else if $scope == down
+              +media-breakpoint-down($breakpoint)
+                +assign-position($direction, $n-px)
+            @else if $scope == only
+              +media-breakpoint-only($breakpoint)
+                +assign-position($direction, $n-px)
+        @else
+          .is-#{$direction}-#{$n}
+            +assign-position($direction, $n-px)

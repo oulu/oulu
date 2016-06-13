@@ -5,8 +5,13 @@
     @return null
 
 @function background_position($value)
-  @if list($value) and nth($value, 1) != size
-    @return true
+  @if list($value)
+    @if string(nth($value, 1)) and not str-index(nth($value, 1), '/')
+      @return true
+    @else if number(nth($value, 1))
+      @return true
+    @else
+      @return null
   @else
     @return null
 
@@ -17,8 +22,8 @@
     @else
       @return null
   @else if list($value)
-    @if nth($value, 1) == size
-      @return unquote('/') nth($value, 2) nth($value, 3)
+    @if string(nth($value, 1)) and str-index(nth($value, 1), '/')
+      @return $value
     @else
       @return null
   @else
