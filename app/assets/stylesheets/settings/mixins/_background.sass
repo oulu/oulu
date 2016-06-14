@@ -24,7 +24,7 @@
       @else if background_attachment($property)
         $background-attachment: $property
       @else if background_size($property)
-        $background-size: background_size($property)
+        $background-size: background_size_value($property)
       @else if background_clip($property)
         $background-clip: $property
       @if background-size != () and $background-position == ()
