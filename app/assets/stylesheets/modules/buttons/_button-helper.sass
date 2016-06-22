@@ -7,7 +7,7 @@
     font-size: 12px
     margin-left: 6px
   &.is-block
-    display: block
+    display: flex
     width: 100%
     select
       display: block
@@ -43,6 +43,12 @@
       font-size: inherit
       color: inherit
       cursor: pointer
+
+button[class*="is-button"]
+  display: inline-block
+  &.is-block
+    display: block
+
 
 // button-group
 .is-button-group
