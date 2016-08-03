@@ -1,49 +1,42 @@
 =super-bold-border-button($color, $size)
-  $border-width: ""
-  @if $size == 'xs'
-    $border-width: $xs-button-font-size/5
-  @else if $size == 'sm'
-    $border-width: $sm-button-font-size/4.5
-  @else if $size == 'md'
-    $border-width: $md-button-font-size/4
-  @else if $size == 'lg'
-    $border-width: $lg-button-font-size/3.5
-  @else if $size == 'xl'
-    $border-width: $xl-button-font-size/3
+  $border-width: 4px !default
+  $text-color: luma_contrast_color($color)
   background-color: $color
-  color: luma_contrast_color($color)
-  box-shadow: rgba(black, .4) 0 4px 0 0, $default-text 0 0 0 $border-width inset
+  color: $text-color
+  border: solid $border-width $default-text
+  box-shadow: rgba(black, .4) 0 1px 0 0
+  transition: background-color .3s ease-in, box-shadow .3s ease-in
   &:link,
   &:visited
-    color: luma_contrast_color($color)
+    color: $text-color
   &:hover,
   &.hover,
   &.is-hover
-    $color: if(luma_bright($color), shade($color, 20%), tint($color, 20%))
-    color: luma_contrast_color($color)
+    $color: if(luma_bright($color), shade($color, 15%), tint($color, 15%))
+    color: $text-color
     background-color: $color
   &:active,
   &.active,
   &.is-active
-    color: luma_contrast_color($color)
+    color: $text-color
     background-color: $color
     +top(1px)
-    box-shadow: $default-text 0 0 0 $border-width inset
+    box-shadow: none
 
   // radio & checkbos
   &.is-radio,
   &.is-checkbox
     &:before
-      box-shadow: $default-text 0 0 0 2px, $default-text 0 0 0 $border-width inset
+      box-shadow: $default-text 0 0 0 2px
 
   // checked
   &.is-checked
-    color: luma_contrast_color($button-checked-color)
+    color: $text-color
     background-color: $button-checked-color
     +top(1px)
     box-shadow: none
     &:before
-      box-shadow: luma_contrast_color($button-checked-color) 0 0 0 2px, $default-text 0 0 0 $border-width inset
+      box-shadow: luma_contrast_color($button-checked-color) 0 0 0 2px
 
   // select
   &.is-select
@@ -55,8 +48,7 @@
   // disabled
   &.is-disabled,
   &:disabled
-    $color: if(luma_bright($color), shade($color, 20%), tint($color, 20%))
-    color: rgba(luma_contrast_color($color), .7)
+    $color: if(luma_bright($color), shade($color, 15%), tint($color, 15%))
+    color: rgba($text-color, .7)
     background-color: rgba($color, .7)
     border-color: rgba($default-text, .7)
-    box-shadow: $default-text 0 0 0 $border-width inset
