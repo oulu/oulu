@@ -1,7 +1,7 @@
 =margin($value1, $value2: null)
   @if number(nth($value1, 1)) or nth($value1, 1) == 'auto'
     @if equal_nth($value1, 1)
-      margin: value1
+      margin: $value1
     @else if equal_nth($value1, 2)
       margin-top: nth($value1, 1)
       margin-bottom: nth($value1, 2)
