@@ -13,6 +13,15 @@ unless defined?(Sass)
 end
 
 module Oulu
+  @components ||= []
+  class << self
+    attr_accessor :components
+
+    def load_paths
+      components.flat_map(&:load_paths)
+    end
+  end
+
   if defined?(Rails) && defined?(Rails::Engine)
     class Engine < ::Rails::Engine
       require 'oulu/engine'

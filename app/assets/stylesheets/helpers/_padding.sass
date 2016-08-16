@@ -1,0 +1,35 @@
+=assign-margin-padding($direction, $property, $n-px)
+  @if $direction == horizontal
+    #{$property}-left: $n-px
+    #{$property}-right: $n-px
+  @else if $direction == vertical
+    #{$property}-top: $n-px
+    #{$property}-bottom: $n-px
+  @else
+    #{$property}-#{$direction}: $n-px
+body
+  @for $i from 0 through 20
+    $n: $i*4
+    $n-px: px_to_rem($n*1px)
+    $properties: padding
+    $directions: top, bottom, left, right, horizontal, vertical
+    $breakpoints: xs, sm, md, lg, xl, false
+    $scopes: up, down
+    @each $property in $properties
+      @each $direction in $directions
+        @each $breakpoint in $breakpoints
+          @each $scope in $scopes
+            @if $breakpoint
+              .is-#{$property}-#{$direction}-#{$n}-#{$breakpoint}-#{$scope}
+                @if $scope == up
+                  +media-breakpoint-up($breakpoint)
+                    +assign-margin-padding($direction, $property, $n-px)
+                @else if $scope == down
+                  +media-breakpoint-down($breakpoint)
+                    +assign-margin-padding($direction, $property, $n-px)
+                @else if $scope == only
+                  +media-breakpoint-only($breakpoint)
+                    +assign-margin-padding($direction, $property, $n-px)
+            @else
+              .is-#{$property}-#{$direction}-#{$n}
+                +assign-margin-padding($direction, $property, $n-px)

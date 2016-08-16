@@ -8,8 +8,8 @@ Gem::Specification.new do |spec|
   spec.version       = Oulu::VERSION
   spec.authors       = ["machida"]
   spec.email         = ["machidanohimitsu@gmail.com"]
-  spec.description   = %q{This gem provides assets files for Middleman Project.}
-  spec.summary       = %q{My assets gem for middleman.}
+  spec.description   = %q{Sass mixins.}
+  spec.summary       = %q{Sass mixins.}
   spec.homepage      = ""
   spec.license       = "MIT"
 
