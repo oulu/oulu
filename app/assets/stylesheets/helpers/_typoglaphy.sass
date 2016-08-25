@@ -20,7 +20,24 @@ body
   .is-white-space-nowrap
     white-space: nowrap
 
-  $positions: left center right
-  @each $position in $positions
-    .is-text-align-#{$position}
-      text-align: $position
+  @for $i from 0 through 20
+    $breakpoints: xs, sm, md, lg, xl, false
+    $scopes: up, down, only
+    $positions: left center right
+    @each $breakpoint in $breakpoints
+      @each $scope in $scopes
+        @each $position in $positions
+          @if $breakpoint
+            .is-text-align-#{$position}-#{$breakpoint}-#{$scope}
+              @if $scope == up
+                +media-breakpoint-up($breakpoint)
+                  text-align: $position
+              @else if $scope == down
+                +media-breakpoint-down($breakpoint)
+                  text-align: $position
+              @else if $scope == only
+                +media-breakpoint-only($breakpoint)
+                  text-align: $position
+          @else
+            .is-text-align-#{$position}
+              text-align: $position
