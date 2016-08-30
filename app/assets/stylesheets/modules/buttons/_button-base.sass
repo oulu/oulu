@@ -9,7 +9,7 @@
   text-decoration: none
   -webkit-tap-highlight-color: transparent
 
-=button-size($size, $border-width: false, $border-radius: 4px, $button-height-ratio: 2.85)
+=button-size($size, $border-width: false, $border-radius: .25rem, $button-height-ratio: 2.85)
   $font-size: ""
   @if $size == 'xs'
     $font-size: $xs-button-font-size
@@ -32,11 +32,13 @@
   +padding(horizontal, $button-height/1.6)
   @if $border-radius
     +border-radius($border-radius)
-  @if $font-size > 12px
+  @if $font-size > .6875rem and 1rem > $font-size
+    font-weight: 600
+  @else if 1rem < $font-size
     font-weight: bold
   i,
   .is-button-icon
-    @if $font-size > 28
+    @if $font-size > 1.75rem
       margin-right: $font-size/4
     @else
       margin-right: $font-size/3
@@ -44,7 +46,7 @@
     i,
     .is-button-icon
       margin-right: 0
-      @if $font-size > 28
+      @if $font-size > 1.75rem
         margin-left: $font-size/4
       @else
         margin-left: $font-size/3
@@ -56,7 +58,7 @@
       +position(absolute, left $button-height/2, top 0)
       line-height: $button-height - ($border-width*2)
     input
-      +padding(horizontal, ($button-height + if($font-size > 28, $font-size/4, $font-size/3)) $button-height/2)
+      +padding(horizontal, ($button-height + if($font-size > 1.75rem, $font-size/4, $font-size/3)) $button-height/2)
       height: $button-height - ($border-width*2)
   &.is-dummy-select
     $icon-width: round($font-size * 2.7)
@@ -66,7 +68,7 @@
     &:before
       +fa("\f0d7")
       +position(absolute, left 0, top 0)
-      border-right: 1px solid shade($secondary, 15%)
+      border-right: .0625rem solid shade($secondary, 15%)
       +text-block($icon-size $button-height, center shade($secondary, 55%))
       +size($icon-width $button-height)
   &.is-select
@@ -92,7 +94,7 @@
     &:before
       content: ""
       display: block
-      +position(absolute, left 16px, top 50%)
+      +position(absolute, left 1rem, top 50%)
       $check-base-size: round($font-size * .9)
       +size($check-base-size)
       margin-top: round($check-base-size / -2)
@@ -102,9 +104,15 @@
       opacity: 0
       +size($check-icon-size)
       +text-block($check-icon-size 1, $button-checked-icon-color)
-      text-shadow: rgba(black, .4) 0 1px 1px
-      +position(absolute, left 14px, top 50%)
+      text-shadow: rgba(black, .4) 0 .0625rem .0625rem
+      +position(absolute, left .875rem, top 50%)
       margin-top: round($check-icon-size / -2 * 1.2)
+  &.is-icon
+    +padding(horizontal, $button-height/3.5)
+    i,
+    .is-button-icon
+      margin-right: 0
+
 
   // button-grounp
   .is-button-group >li &

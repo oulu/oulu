@@ -7,22 +7,23 @@
 @import styles/material
 @import styles/flat-round
 @import styles/super-bold-border
+@import styles/standard
 
 @import button-helper
 
 =button($style, $size, $color, $options: false)
   +button-base
   @if $style == normal
-    +button-size($size, 1px, 4px)
+    +button-size($size, .0625rem, .25rem)
     +normal-button($color)
   @else if $style == border
-    +button-size($size, 1px, 4px)
+    +button-size($size, .0625rem, .25rem)
     +border-button($color)
   @else if $style == bold-border
-    +button-size($size, 2px, 8px)
+    +button-size($size, .125rem, .5rem)
     +border-button($color)
   @else if $style == flat-emboss
-    +button-size($size, false, 4px)
+    +button-size($size, false, .25rem)
     +flat-emboss-button($color)
   @else if $style == material
     +button-size($size, false, false)
@@ -31,8 +32,11 @@
     +button-size($size, false, 1000px)
     +flat-round-button($color)
   @else if $style == super-bold-border
-    +button-size($size, 4px, 6px, 3.4)
+    +button-size($size, .25rem, .375rem, 3.4)
     +super-bold-border-button($color, $size)
+  @else if $style == standard
+    +button-size($size, .0625rem, .25rem)
+    +standard-button($color)
   @each $option in $options
     @if $option == 'left'
       text-align: left
