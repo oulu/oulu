@@ -8,6 +8,10 @@
   touch-action: manipulation
   text-decoration: none
   -webkit-tap-highlight-color: transparent
+  &[type="button"],
+  &[type="reset"],
+  &[type="submit"]
+    display: inline-block
 
 =button-size($size, $border-width: false, $border-radius: .25rem, $button-height-ratio: 2.85)
   $font-size: ""
