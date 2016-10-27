@@ -14,7 +14,9 @@
 
 // +text-block($font-size $line-height $margin-bottom, $font-weight $text-align $color $top)
 =text-block($value1: null, $value2: null)
-  @if px_to_rem(nth($value1, 1)) > .5rem
+  @if em(nth($value1, 1))
+    font-size: nth($value1, 1)
+  @else if px_to_rem(nth($value1, 1)) > .5rem or em(nth($value1, 1))
     font-size: nth($value1, 1)
   @else
     +small-font(nth($value1, 1))
