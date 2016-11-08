@@ -35,7 +35,7 @@
     +border(all, $border-width)
   @else
     $border-width: 0
-  height: $font-size * $button-xs-height-ratio
+  height: $button-height
   $vertical-padding: ($button-height - $font-size - ($border-width * 2)) / 2
   +padding(vertical, $vertical-padding)
   +text-block($font-size 1)
@@ -92,7 +92,7 @@
     &:after
       +fa("\f0d7")
       +position(absolute, right 0, top 0 bottom 0, 0)
-      +text-block($icon-size ($button-height - $border-width * 2), center)
+      +text-block($icon-size ($button-height), center)
       +size($icon-width null)
     select
       padding: 0 (($font-size * 1.4) + $icon-width) 0 ($font-size * 1.4)
