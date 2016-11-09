@@ -12,7 +12,6 @@
 @import button-helper
 
 =button($style, $size, $color, $options: false)
-  +button-base
   @if $style == normal
     +button-size($size, .0625rem, .25rem)
     +normal-button($color)
