@@ -1,10 +1,15 @@
 // button option
 [class*="is-button"]
   +button-base
+  white-space: nowrap
   &[class*="xs"]
     -webkit-font-smoothing: subpixel-antialiased
   &.has-image
     height: auto
+  &.is-block-sm-down
+    +media-breakpoint-down(sm)
+      display: flex
+      width: 100%
   .is-button-note
     +inline-block
     font-size: .75rem
@@ -50,6 +55,9 @@
       font-size: inherit
       color: inherit
       cursor: pointer
+  &.is-multi-lines
+    height: auto
+    line-height: 1.45
 
 button[class*="is-button"]
   display: inline-block

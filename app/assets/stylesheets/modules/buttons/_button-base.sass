@@ -126,14 +126,24 @@
     .is-button-icon
       margin-right: 0
 
-
   // button-grounp
-  .is-button-group >li &
-    border-radius: 0
   .is-button-group >li:first-child &
     border-radius: $border-radius 0 0 $border-radius
   .is-button-group  >li:last-child &
     border-radius: 0 $border-radius $border-radius 0
+  .is-button-group >li:not(:last-child) &
+    @if $border-width / 2 < 1
+      border-right-width: 0
+    @else
+      border-right-width: $border-width / 2
+
+button[class*="is-button"]
+  +padding(vertical, 0)
+
+
+// button-grounp
+.is-button-group >li [class*="is-button"]
+  border-radius: 0
 
 
 =button-group
