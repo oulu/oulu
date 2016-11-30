@@ -44,7 +44,6 @@
     +standard-button-color($button-checked-color, true)
     border-color: shade($button-checked-color, 10%) shade($button-checked-color, 16%) shade($button-checked-color, 26%)
     box-shadow: darken($button-checked-color, 12%) 0 1px 0 inset, rgba(white, .3) 0 1px 1px
-    +top(1px)
     &:before
       box-shadow: rgba(black, 0.2) 0 1px 1px inset
       background-color: #{if(luma_bright($button-checked-color), tint($button-checked-color, 20%), shade($button-checked-color, 20%))}
