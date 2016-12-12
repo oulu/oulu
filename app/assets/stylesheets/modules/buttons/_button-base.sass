@@ -32,7 +32,7 @@
     $font-size: $xl-button-font-size
     $button-height: $font-size * $button-xl-height-ratio - if($border-width, $border-width, 0) * 2
   @if $border-width
-    +border(all, $border-width)
+    border-width: $border-width
   @else
     $border-width: 0
   height: $button-height
@@ -41,7 +41,7 @@
   +text-block($font-size 1)
   +padding(horizontal, $button-height/1.6)
   @if $border-radius
-    +border-radius($border-radius)
+    border-radius: $border-radius
   @if $font-size > .6875rem and 1rem > $font-size
     font-weight: 600
   @else if .999999rem < $font-size

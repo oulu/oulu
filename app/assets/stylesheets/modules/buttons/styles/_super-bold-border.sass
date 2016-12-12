@@ -1,11 +1,12 @@
 =super-bold-border-button($color, $size)
-  $border-width: 4px !default
+  $border-width: .25rem !default
   $text-color: luma_contrast_color($color)
   background-color: $color
   color: $text-color
   border: solid $border-width $default-text
-  box-shadow: rgba(black, .4) 0 1px 0 0
+  box-shadow: rgba(black, .4) 0 .0625rem 0 0
   transition: background-color .3s ease-in, box-shadow .3s ease-in
+  font-weight: 800
   &:link,
   &:visited
     color: $text-color
@@ -27,7 +28,7 @@
   &.is-radio,
   &.is-checkbox
     &:before
-      box-shadow: $default-text 0 0 0 2px
+      box-shadow: $default-text 0 0 0 .125rem
 
   // checked
   &.is-checked
