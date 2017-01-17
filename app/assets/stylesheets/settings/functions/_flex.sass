@@ -41,15 +41,15 @@
     @return null
 
 @function flex($values...)
-  @if length($value) > 3
+  @if length($values) > 3
     @return null
   @else
-    @if flex-grow(nth($value, 1))
-      @if length($value) = 3
-        @if flex-shrink(nth($value, 2)) and flex-flex-basis(nth($value, 3))
+    @if flex-grow(nth($values, 1))
+      @if length($values) == 3
+        @if flex-shrink(nth($values, 2)) and flex-flex-basis(nth($values, 3))
           @return true
-      @else if length($value) = 2
-        @if flex-shrink(nth($value, 2))
+      @else if length($values) == 2
+        @if flex-shrink(nth($values, 2))
           @return true
       @else
         @return true
@@ -57,12 +57,12 @@
       @return null
 
 @function flex-flow($values...)
-  @if length($value) > 2
+  @if length($values) > 2
     @return null
   @else
-    @if flex-direction(nth($value, 1))
-      @if length($value) = 2
-        @if flex-wrap(nth($value, 2))
+    @if flex-direction(nth($values, 1))
+      @if length($values) == 2
+        @if flex-wrap(nth($values, 2))
           @return true
       @else
         @return true

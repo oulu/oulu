@@ -14,7 +14,7 @@
 
 // $n以下のときにtrue
 @function or_less_nth($value, $n)
-  @if length($value) =< $n
+  @if length($value) <= $n
     @return true
   @else
     @return null
