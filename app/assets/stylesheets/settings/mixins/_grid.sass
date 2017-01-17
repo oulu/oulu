@@ -157,7 +157,29 @@
 .row
   @for $i from 0 through 16
     $gutter-size: $i * 4
-    &.is-gutter-width-#{$gutter-size}
-      +margin(horizontal, px_to_rem($gutter-size * 1px, $base-px) / -2)
-      >[class*=col-]
-        +padding(horizontal, px_to_rem($gutter-size * 1px, $base-px) / 2)
+    $breakpoints: xs, sm, md, lg, xl, false
+    $scopes: up, down, only
+    @each $breakpoint in $breakpoints
+      @if $breakpoint
+        @each $scope in $scopes
+          &.is-gutter-width-#{$gutter-size}-#{$breakpoint}-#{$scope}
+            @if $scope == up
+              +media-breakpoint-up($breakpoint)
+                +margin(horizontal, px_to_rem($gutter-size * 1px, $base-px) / -2)
+                >[class*=col-]
+                  +padding(horizontal, px_to_rem($gutter-size * 1px, $base-px) / 2)
+            @else if $scope == down
+              +media-breakpoint-down($breakpoint)
+                +margin(horizontal, px_to_rem($gutter-size * 1px, $base-px) / -2)
+                >[class*=col-]
+                  +padding(horizontal, px_to_rem($gutter-size * 1px, $base-px) / 2)
+            @else if $scope == only
+              +media-breakpoint-only($breakpoint)
+                +margin(horizontal, px_to_rem($gutter-size * 1px, $base-px) / -2)
+                >[class*=col-]
+                  +padding(horizontal, px_to_rem($gutter-size * 1px, $base-px) / 2)
+      @else
+        &.is-gutter-width-#{$gutter-size}
+          +margin(horizontal, px_to_rem($gutter-size * 1px, $base-px) / -2)
+          >[class*=col-]
+            +padding(horizontal, px_to_rem($gutter-size * 1px, $base-px) / 2)

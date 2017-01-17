@@ -1,0 +1,70 @@
+@function justify-content($value)
+  @if $value == "flex-start" or $value == "flex-end" or $value == "center" or $value == "space-between" or $value == "space-around" or $value == "justify-content-inherit" or $value == "justify-content-initial" or $value == "justify-content-unset"
+    @return true
+  @else
+    @return null
+
+@function align-items($value)
+  @if $value == "flex-start" or $value == "flex-end" or $value == "center" or $value == "baseline" or $value == "stretch" or $value == "align-items-inherit" or $value == "align-items-initial" or $value == "align-items-unset"
+    @return true
+  @else
+    @return null
+
+@function flex-direction($value)
+  @if $value == "row" or $value == "row-reverse" or $value == "column" or $value == "column-reverse" or $value == "flex-direction-initial" or $value == "flex-direction-inherit"
+    @return true
+  @else
+    @return null
+
+@function flex-wrap($value)
+  @if $value == "nowrap" or $value == "wrap" or $value == "wrap-reverse" or $value == "flex-wrap-initial" or $value == "flex-wrap-inherit"
+    @return true
+  @else
+    @return null
+
+@function flex-grow($value)
+  @if unitless_number($value) or $value == "flex-grow-initial" or $value == "flex-grow-inherit"
+    @return true
+  @else
+    @return null
+
+@function flex-shrink($value)
+  @if unitless_number($value) or $value == "flex-shrink-initial" or $value == "flex-shrink-inherit"
+    @return true
+  @else
+    @return null
+
+@function flex-basis($value)
+  @if unit_number($value) or $value == "flex-basis-initial" or $value == "flex-basis-inherit"
+    @return true
+  @else
+    @return null
+
+@function flex($values...)
+  @if length($value) > 3
+    @return null
+  @else
+    @if flex-grow(nth($value, 1))
+      @if length($value) = 3
+        @if flex-shrink(nth($value, 2)) and flex-flex-basis(nth($value, 3))
+          @return true
+      @else if length($value) = 2
+        @if flex-shrink(nth($value, 2))
+          @return true
+      @else
+        @return true
+    @else
+      @return null
+
+@function flex-flow($values...)
+  @if length($value) > 2
+    @return null
+  @else
+    @if flex-direction(nth($value, 1))
+      @if length($value) = 2
+        @if flex-wrap(nth($value, 2))
+          @return true
+      @else
+        @return true
+    @else
+      @return null
