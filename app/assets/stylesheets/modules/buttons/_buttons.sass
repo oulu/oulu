@@ -61,4 +61,8 @@
           $button-color: $danger
         @else if $button-color-name == info
           $button-color: $info
+        @else if $button-color-name == twitter
+          $button-color: $twitter
+        @else if $button-color-name == facebook
+          $button-color: $facebook
         +button($button-style, $button-size, $button-color)

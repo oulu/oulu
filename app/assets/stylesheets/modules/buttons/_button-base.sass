@@ -89,6 +89,7 @@
     $icon-width: $font-size * 2.7
     $icon-size: $font-size * 1.3
     position: relative
+    overflow: hidden
     &:after
       +fa("\f0d7")
       +position(absolute, right 0, top 0 bottom 0, 0)
@@ -104,6 +105,8 @@
     $icon-space: $font-size * 3
     padding-left: $icon-space
     position: relative
+    *
+      cursor: pointer
     &:before
       content: ""
       display: block
