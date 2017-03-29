@@ -5,7 +5,7 @@
     @return null
 
 // https://gist.github.com/hail2u/6101358
-@function str-replace($string, $substr, $newsubstr, $all: 0)
+@function string-replace($string, $substr, $newsubstr, $all: 0)
   $position-found: str-index($string, $substr)
   @if $position-found
     @while $position-found > 0
@@ -21,4 +21,4 @@
     @return $string
 
 @function dot_to_underscore($string)
-  @return str-replace($string, ".", "_")
+  @return string-replace($string, ".", "_")

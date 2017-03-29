@@ -34,7 +34,7 @@
   @if background_size($value)
     @if list($value)
       @if string(nth($value, 1)) and str-index(nth($value, 1), '\/')
-        @return unquote(str-replace(nth($value, 1), '\\/', '/') + ' ' + nth($value, 2))
+        @return unquote(string-replace(nth($value, 1), '\\/', '/') + ' ' + nth($value, 2))
       @else
         @return unquote('/' + $value)
     @else
