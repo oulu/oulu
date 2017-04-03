@@ -1,0 +1,51 @@
+=flat-button($color)
+  color: luma_contrast_color($color)
+  background-color: $color
+  box-shadow: shade($color, 20%) 0 .125rem 0
+  transition: background-color .2s ease-in, top .2s ease-in
+  &:link,
+  &:visited
+    color: luma_contrast_color($color)
+    box-shadow: shade($color, 20%) 0 .125rem 0
+  &:hover,
+  &.hover,
+  &.is-hover
+    color: luma_contrast_color($color)
+    $background-color: saturate($color, 20%)
+    background-color: $background-color
+    box-shadow: shade($background-color, 20%) 0 .125rem 0
+  &:active,
+  &.active,
+  &.is-active
+    color: luma_contrast_color($color)
+    $background-color: saturate($color, 20%)
+    background-color: $background-color
+    box-shadow: shade($background-color, 20%) 0 .0625rem 0
+    +top(.0625rem)
+
+  // radio & checkbos
+  &.is-radio,
+  &.is-checkbox
+    &:before
+      box-shadow: $color 0 0 0 1px
+
+  // checked
+  &.is-checked
+    color: luma_contrast_color($button-checked-color)
+    background-color: $button-checked-color
+    border-color: shade($button-checked-color, 20%)
+    &:before
+      box-shadow: luma_contrast_color($button-checked-color) 0 0 0 1px
+
+  // select
+  &.is-select
+    &:after
+      color: $color
+      border-left: 1px solid $color
+
+  // disabled
+  &.is-disabled,
+  &:disabled
+    $color: if(luma_bright($color), shade($color, 20%), tint($color, 20%))
+    color: rgba($color, .7)
+    border-color: $color

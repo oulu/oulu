@@ -3,6 +3,7 @@
 // button styles
 @import styles/normal
 @import styles/border
+@import styles/flat
 @import styles/flat-emboss
 @import styles/material
 @import styles/flat-round
@@ -21,6 +22,9 @@
   @else if $style == bold-border
     +button-size($size, .125rem, .5rem)
     +border-button($color)
+  @else if $style == flat
+    +button-size($size, false, .25rem)
+    +flat-button($color)
   @else if $style == flat-emboss
     +button-size($size, false, .25rem)
     +flat-emboss-button($color)
