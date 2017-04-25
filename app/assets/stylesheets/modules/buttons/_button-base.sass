@@ -19,18 +19,23 @@
   @if $size == 'xs'
     $font-size: $xs-button-font-size
     $button-height: $font-size * $button-xs-height-ratio - if($border-width, $border-width, 0) * 2
+    +padding(horizontal, ($button-height/$button-xs-width-ratio))
   @else if $size == 'sm'
     $font-size: $sm-button-font-size
     $button-height: $font-size * $button-sm-height-ratio - if($border-width, $border-width, 0) * 2
+    +padding(horizontal, ($button-height/$button-sm-width-ratio))
   @else if $size == 'md'
     $font-size: $md-button-font-size
     $button-height: $font-size * $button-md-height-ratio - if($border-width, $border-width, 0) * 2
+    +padding(horizontal, ($button-height/$button-md-width-ratio))
   @else if $size == 'lg'
     $font-size: $lg-button-font-size
     $button-height: $font-size * $button-lg-height-ratio - if($border-width, $border-width, 0) * 2
+    +padding(horizontal, ($button-height/$button-lg-width-ratio))
   @else if $size == 'xl'
     $font-size: $xl-button-font-size
     $button-height: $font-size * $button-xl-height-ratio - if($border-width, $border-width, 0) * 2
+    +padding(horizontal, ($button-height/$button-xl-width-ratio))
   @if $border-width
     border-width: $border-width
   @else
@@ -39,7 +44,6 @@
   $vertical-padding: ($button-height - $font-size - ($border-width * 2)) / 2
   +padding(vertical, $vertical-padding)
   +text-block($font-size 1)
-  +padding(horizontal, $button-height/1.6)
   @if $border-radius
     border-radius: $border-radius
   @if $font-size > .6875rem and 1rem > $font-size

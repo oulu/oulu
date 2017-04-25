@@ -42,3 +42,10 @@
   overflow: hidden
   text-overflow: ellipsis
   white-space: nowrap
+
+=multi-lines-ellipsis($lines: 3, $line-height: 1.4)
+  display: -webkit-box
+  -webkit-box-orient: vertical
+  -webkit-line-clamp: $lines
+  overflow: hidden
+  max-height: (1em * $line-height) * $lines

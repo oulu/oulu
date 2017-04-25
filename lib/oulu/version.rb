@@ -1,3 +1,3 @@
 module Oulu
-  VERSION = "0.12.33"
+  VERSION = "0.12.34"
 end
