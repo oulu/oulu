@@ -28,6 +28,34 @@
   @else
     @warn "`#{$width}` is not a valid length for the `$width` parameter in the `size` mixin."
 
+=max-size($value)
+  $width: nth($value, 1)
+  $height: $width
+  @if length($value) > 1
+    $height: nth($value, 2)
+  @if is-size($height)
+    max-height: $height
+  @else
+    @warn "`#{$height}` is not a valid length for the `$height` parameter in the `size` mixin."
+  @if is-size($width)
+    max-width: $width
+  @else
+    @warn "`#{$width}` is not a valid length for the `$width` parameter in the `size` mixin."
+
+=min-size($value)
+  $width: nth($value, 1)
+  $height: $width
+  @if length($value) > 1
+    $height: nth($value, 2)
+  @if is-size($height)
+    min-height: $height
+  @else
+    @warn "`#{$height}` is not a valid length for the `$height` parameter in the `size` mixin."
+  @if is-size($width)
+    min-width: $width
+  @else
+    @warn "`#{$width}` is not a valid length for the `$width` parameter in the `size` mixin."
+
 =overflow($values)
   $overflow-x: optional_nth($values, 1)
   $overflow-y: optional_nth($values, 2)
