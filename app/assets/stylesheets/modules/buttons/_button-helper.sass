@@ -21,13 +21,13 @@
     &[type="button"],
     &[type="reset"],
     &[type="submit"]
-      display: block
+      display: flex
     select
       display: block
       width: 100%
   &.is-radio,
   &.is-checkbox
-    display: block
+    display: flex
     input
       opacity: 0
       +position(absolute)
@@ -70,7 +70,7 @@ button[class*="is-button"]
 .is-button-group
   font-size: 0
   >li
-    display: inline-block
+    display: inline-flex
     letter-spacing: normal
     font-size: 0
   @for $i from 1 through 12
