@@ -10,21 +10,10 @@
     +media-breakpoint-down(sm)
       display: flex
       width: 100%
-  .is-button-note
-    +inline-block
-    font-size: .75rem
-    margin-left: .375rem
   &.is-block
     display: flex
     width: 100%
     +padding(horizontal, 0)
-    &[type="button"],
-    &[type="reset"],
-    &[type="submit"]
-      display: flex
-    select
-      display: block
-      width: 100%
   &.is-radio,
   &.is-checkbox
     display: flex
@@ -59,12 +48,20 @@
   &.is-multi-lines
     height: auto
     line-height: 1.45
+  .is-button-note
+    +inline-block
+    font-size: .75rem
+    margin-left: .375rem
 
 button[class*="is-button"]
   display: inline-block
   &.is-block
     display: block
 
+button[class*="is-button"]
+  display: inline-block
+  &.is-block
+    display: block
 
 // button-group
 .is-button-group

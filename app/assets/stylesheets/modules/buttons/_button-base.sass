@@ -12,6 +12,12 @@
   &[type="reset"],
   &[type="submit"]
     display: inline-block
+    &.is-block
+      display: block
+  .is-block
+    select
+      display: block
+      width: 100%
 
 =button-size($size, $border-width: false, $border-radius: .25rem)
   $font-size: ""
