@@ -48,7 +48,7 @@
     $border-width: 0
   height: auto
   min-height: $button-height
-  $vertical-padding: ($button-height - $font-size - ($border-width * 2)) / 2
+  $vertical-padding: ($button-height - (($font-size * 1.45) - ($border-width * 2))) / 2
   +padding(vertical, $vertical-padding)
   +text-block($font-size 1.45)
   @if $border-radius
@@ -150,10 +150,6 @@
       border-right-width: 0
     @else
       border-right-width: $border-width / 2
-
-button[class*="is-button"]
-  +padding(vertical, 0)
-
 
 // button-grounp
 .is-button-group >li [class*="is-button"]
