@@ -11,14 +11,14 @@
   &.hover,
   &.is-hover
     color: luma_contrast_color($color)
-    $background-color: saturate($color, 20%)
+    $background-color: darken($color, 10%)
     background-color: $background-color
     box-shadow: shade($background-color, 20%) 0 .125rem 0
   &:active,
   &.active,
   &.is-active
     color: luma_contrast_color($color)
-    $background-color: saturate($color, 20%)
+    $background-color: darken($color, 10%)
     background-color: $background-color
     box-shadow: shade($background-color, 20%) 0 .0625rem 0
     +top(.0625rem)

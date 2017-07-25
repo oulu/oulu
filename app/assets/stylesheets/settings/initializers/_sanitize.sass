@@ -6,10 +6,6 @@
  * Normalization
  */
 
-abbr[title]
-	text-decoration: underline // Chrome 48+, Edge 12+, Internet Explorer 11-, Safari 9+
-	text-decoration: underline dotted // Firefox 40+
-
 audio:not([controls])
 	display: none // Chrome 44-, iOS 8+, Safari 9+
 
@@ -267,11 +263,6 @@ samp
 nav ol,
 nav ul
 	list-style: if(variable-exists(nav-list-style), $nav-list-style, none)
-
-// specify the font size of small elements
-
-small
-	font-size: if(variable-exists(small-font-size), $small-font-size, 75%)
 
 // specify the border styling of tables
 
