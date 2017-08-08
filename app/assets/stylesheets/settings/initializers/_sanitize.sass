@@ -18,92 +18,92 @@ button
 button,
 input
 	&::-moz-focus-inner
-    // Firefox 4+
+		// Firefox 4+
 		border: 0
-    // Firefox 4+
+		// Firefox 4+
 		padding: 0
 
 	&:-moz-focusring
-    // Firefox 4+
+		// Firefox 4+
 		outline: 1px dotted ButtonText
 
 button,
 select
-  // Firefox 40+, Internet Explorer 11-
+	// Firefox 40+, Internet Explorer 11-
 	text-transform: none
 
 details
-  // Edge 12+, Firefox 40+, Internet Explorer 11-, Windows Phone 8.1+
+	// Edge 12+, Firefox 40+, Internet Explorer 11-, Windows Phone 8.1+
 	display: block
 
 hr
-  // Internet Explorer 11-, Edge 12+
+	// Internet Explorer 11-, Edge 12+
 	overflow: visible
 
 html
-   // Edge 12+, Internet Explorer 11-
+	// Edge 12+, Internet Explorer 11-
 	-ms-overflow-style: -ms-autohiding-scrollbar
 	//overflow-y: scroll // All browsers without overlaying scrollbars
 
-  // iOS 8+, Windows Phone 8.1+
+	// iOS 8+, Windows Phone 8.1+
 	-webkit-text-size-adjust: 100%
 
 input
-  // iOS 8+
+	// iOS 8+
 	-webkit-border-radius: 0
 
 	&[type="button"],
 	&[type="reset"],
 	&[type="submit"]
-    // iOS 8+
+		// iOS 8+
 		-webkit-appearance: button
 
 	&[type="number"]
-    // Firefox 36+
+		// Firefox 36+
 		width: auto
 
 	&[type="search"]
-    // Chrome 45+, Safari 9+
+		// Chrome 45+, Safari 9+
 		-webkit-appearance: textfield
 
 		&::-webkit-search-cancel-button,
 		&::-webkit-search-decoration
-      // Chrome 45+, Safari 9+
+			// Chrome 45+, Safari 9+
 			-webkit-appearance: none
 
 main
-  // Android 4.3-, Internet Explorer 11-, Windows Phone 8.1+
+	// Android 4.3-, Internet Explorer 11-, Windows Phone 8.1+
 	display: block
 
 pre
-  // Internet Explorer 11-
+	// Internet Explorer 11-
 	overflow: auto
 
 progress
-  // Internet Explorer 11-, Windows Phone 8.1+
+	// Internet Explorer 11-, Windows Phone 8.1+
 	display: inline-block
 
 summary
-  // Firefox 40+, Internet Explorer 11-, Windows Phone 8.1+
+	// Firefox 40+, Internet Explorer 11-, Windows Phone 8.1+
 	display: block
 
 svg:not(:root)
-  // Internet Explorer 11-
+	// Internet Explorer 11-
 	overflow: hidden
 
 template
-  // Android 4.3-, Internet Explorer 11-, iOS 7-, Safari 7-, Windows Phone 8.1+
+	// Android 4.3-, Internet Explorer 11-, iOS 7-, Safari 7-, Windows Phone 8.1+
 	display: none
 
 textarea
-  // Edge 12+, Internet Explorer 11-
+	// Edge 12+, Internet Explorer 11-
 	overflow: auto
 
 [hidden]
-  // Internet Explorer 10-
+	// Internet Explorer 10-
 	display: none
 
-//  Universal inheritance
+//	Universal inheritance
 
 *,
 ::before,
@@ -160,15 +160,15 @@ textarea,
 // specify the standard appearance of selects
 
 select
-  // Firefox 40+
+	// Firefox 40+
 	-moz-appearance: none
-  // Chrome 45+
+	// Chrome 45+
 	-webkit-appearance: none
 	&::-ms-expand
-    // Edge 12+, Internet Explorer 11-
+		// Edge 12+, Internet Explorer 11-
 		display: none
 	&::-ms-value
-    // Edge 12+, Internet Explorer 11-
+		// Edge 12+, Internet Explorer 11-
 		color: currentColor
 
 // use current current as the default fill of svg elements
