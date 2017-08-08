@@ -1,10 +1,8 @@
-/*! sanitize.css v3.3.0 | CC0 1.0 Public Domain | github.com/10up/sanitize.css */
+// ! sanitize.css v3.3.0 | CC0 1.0 Public Domain | github.com/10up/sanitize.css */
 
 // Latest tested: Android 6, Chrome 48, Edge 13, Firefox 44, Internet Explorer 11, iOS 9, Opera 35, Safari 9, Windows Phone 8.1
 
-/*
- * Normalization
- */
+// Normalization
 
 audio:not([controls])
 	display: none // Chrome 44-, iOS 8+, Safari 9+
@@ -20,72 +18,92 @@ button
 button,
 input
 	&::-moz-focus-inner
-		border: 0 // Firefox 4+
-		padding: 0 // Firefox 4+
+    // Firefox 4+
+		border: 0
+    // Firefox 4+
+		padding: 0
 
 	&:-moz-focusring
-		outline: 1px dotted ButtonText // Firefox 4+
+    // Firefox 4+
+		outline: 1px dotted ButtonText
 
 button,
 select
-	text-transform: none // Firefox 40+, Internet Explorer 11-
+  // Firefox 40+, Internet Explorer 11-
+	text-transform: none
 
 details
-	display: block // Edge 12+, Firefox 40+, Internet Explorer 11-, Windows Phone 8.1+
+  // Edge 12+, Firefox 40+, Internet Explorer 11-, Windows Phone 8.1+
+	display: block
 
 hr
-	overflow: visible // Internet Explorer 11-, Edge 12+
+  // Internet Explorer 11-, Edge 12+
+	overflow: visible
 
 html
-	-ms-overflow-style: -ms-autohiding-scrollbar // Edge 12+, Internet Explorer 11-
+   // Edge 12+, Internet Explorer 11-
+	-ms-overflow-style: -ms-autohiding-scrollbar
 	//overflow-y: scroll // All browsers without overlaying scrollbars
-	-webkit-text-size-adjust: 100% // iOS 8+, Windows Phone 8.1+
+
+  // iOS 8+, Windows Phone 8.1+
+	-webkit-text-size-adjust: 100%
 
 input
-	-webkit-border-radius: 0 // iOS 8+
+  // iOS 8+
+	-webkit-border-radius: 0
 
 	&[type="button"],
 	&[type="reset"],
 	&[type="submit"]
-		-webkit-appearance: button // iOS 8+
+    // iOS 8+
+		-webkit-appearance: button
 
 	&[type="number"]
-		width: auto // Firefox 36+
+    // Firefox 36+
+		width: auto
 
 	&[type="search"]
-		-webkit-appearance: textfield // Chrome 45+, Safari 9+
+    // Chrome 45+, Safari 9+
+		-webkit-appearance: textfield
 
 		&::-webkit-search-cancel-button,
 		&::-webkit-search-decoration
-			-webkit-appearance: none // Chrome 45+, Safari 9+
+      // Chrome 45+, Safari 9+
+			-webkit-appearance: none
 
 main
-	display: block // Android 4.3-, Internet Explorer 11-, Windows Phone 8.1+
+  // Android 4.3-, Internet Explorer 11-, Windows Phone 8.1+
+	display: block
 
 pre
-	overflow: auto // Internet Explorer 11-
+  // Internet Explorer 11-
+	overflow: auto
 
 progress
-	display: inline-block // Internet Explorer 11-, Windows Phone 8.1+
+  // Internet Explorer 11-, Windows Phone 8.1+
+	display: inline-block
 
 summary
-	display: block // Firefox 40+, Internet Explorer 11-, Windows Phone 8.1+
+  // Firefox 40+, Internet Explorer 11-, Windows Phone 8.1+
+	display: block
 
 svg:not(:root)
-	overflow: hidden // Internet Explorer 11-
+  // Internet Explorer 11-
+	overflow: hidden
 
 template
-	display: none // Android 4.3-, Internet Explorer 11-, iOS 7-, Safari 7-, Windows Phone 8.1+
+  // Android 4.3-, Internet Explorer 11-, iOS 7-, Safari 7-, Windows Phone 8.1+
+	display: none
 
 textarea
-	overflow: auto // Edge 12+, Internet Explorer 11-
+  // Edge 12+, Internet Explorer 11-
+	overflow: auto
 
 [hidden]
-	display: none // Internet Explorer 10-
+  // Internet Explorer 10-
+	display: none
 
-/*
- * Universal inheritance
- */
+//  Universal inheritance
 
 *,
 ::before,
@@ -111,9 +129,7 @@ textarea
 
 
 
-/*
- * Opinionated defaults
- */
+// Opinionated defaults
 
 // specify the margin and padding of all elements
 
@@ -144,14 +160,16 @@ textarea,
 // specify the standard appearance of selects
 
 select
-	-moz-appearance: none    // Firefox 40+
-	-webkit-appearance: none // Chrome 45+
-
+  // Firefox 40+
+	-moz-appearance: none
+  // Chrome 45+
+	-webkit-appearance: none
 	&::-ms-expand
-		display: none        // Edge 12+, Internet Explorer 11-
-
+    // Edge 12+, Internet Explorer 11-
+		display: none
 	&::-ms-value
-		color: currentColor  // Edge 12+, Internet Explorer 11-
+    // Edge 12+, Internet Explorer 11-
+		color: currentColor
 
 // use current current as the default fill of svg elements
 
@@ -183,25 +201,22 @@ svg
 	&:focus
 		clip: auto
 
-/*
- * Configurable defaults
- */
+// Configurable defaults
 
 // specify the core styles of all elements
 
 *
-	background-repeat: if(variable-exists(background-repeat), $background-repeat, no-repeat)
+	background-repeat: $background-repeat
 
 // specify the root styles of the document
 
-$colon: '\:'
-$slash: '/'
-#{$colon}root
-	background-color: if(variable-exists(root-background-color), $root-background-color, #ffffff)
-	box-sizing: if(variable-exists(root-box-sizing), $root-box-sizing, border-box)
-	color: if(variable-exists(root-color), $root-color, #000000)
-	cursor: if(variable-exists(root-cursor), $root-cursor, default)
-	font: if(variable-exists(root-font-size), $root-font-size, 100%)#{$slash}if(variable-exists(root-line-height), $root-line-height, 1.5) if(variable-exists(root-font-family), $root-font-family, sans-serif)
+html
+	background-color: $root-background-color
+	box-sizing: $root-box-sizing
+	color: $root-color
+	font-family: $root-font-family
+	line-height: $root-line-height
+	font-size: $root-font-size
 
 // specify the text decoration of anchors
 
@@ -216,7 +231,7 @@ iframe,
 img,
 svg,
 video
-	vertical-align: if(variable-exists(media-element-vertical-align), $media-element-vertical-align, middle)
+	vertical-align: $media-element-vertical-align
 
 // specify the background color of form elements
 
@@ -224,8 +239,8 @@ button,
 input,
 select,
 textarea
-	background-color: if(variable-exists(form-element-background-color), $form-element-background-color, transparent)
-	color: if(variable-exists(form-element-color), $form-element-color, inherit)
+	background-color: $form-element-background-color
+	color: $form-element-color
 
 // specify the minimum height of form elements
 
@@ -248,7 +263,7 @@ button,
 [type="week"],
 select,
 textarea
-	min-height: if(variable-exists(form-element-min-height), $form-element-min-height, 1.5em)
+	min-height: $form-element-min-height
 
 // specify the font family of code elements
 
@@ -256,33 +271,33 @@ code,
 kbd,
 pre,
 samp
-	font-family: if(variable-exists(monospace-font-family), $monospace-font-family, monospace), monospace
+	font-family: $monospace-font-family, monospace
 
 // specify the list style of nav lists
 
 nav ol,
 nav ul
-	list-style: if(variable-exists(nav-list-style), $nav-list-style, none)
+	list-style: $nav-list-style
 
 // specify the border styling of tables
 
 table
-	border-collapse: if(variable-exists(table-border-collapse), $table-border-collapse, collapse)
-	border-spacing: if(variable-exists(table-border-spacing), $table-border-spacing, 0)
+	border-collapse: $table-border-collapse
+	border-spacing: $table-border-spacing
 
 // specify the resizability of textareas
 
 textarea
-	resize: if(variable-exists(textarea-resize), $textarea-resize, vertical)
+	resize: $textarea-resize
 
 // specify the background color, font color, and drop shadow of text selections
 
 ::-moz-selection
-	background-color: if(variable-exists(selection-background-color), $selection-background-color, #b3d4fc) // required when declaring ::selection
-	color: if(variable-exists(selection-color), $selection-color, #ffffff)
-	text-shadow: if(variable-exists(selection-text-shadow), $selection-text-shadow, none)
+	background-color: $selection-background-color
+	color: $selection-color
+	text-shadow: $selection-text-shadow
 
 ::selection
-	background-color: if(variable-exists(selection-background-color), $selection-background-color, #b3d4fc) // required when declaring ::selection
-	color: if(variable-exists(selection-color), $selection-color, #ffffff)
-	text-shadow: if(variable-exists(selection-text-shadow), $selection-text-shadow, none)
+	background-color: $selection-background-color
+	color: $selection-color
+	text-shadow: $selection-text-shadow
