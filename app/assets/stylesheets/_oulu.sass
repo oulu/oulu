@@ -1,15 +1,29 @@
+@charset "UTF-8"
+
 //////////////
 //settings
 //////////////
 
-// oulu-base
-@import oulu-base
+// functions-before-variables
+@import oulu-functions-before-variables
 
+// variables
+@import oulu-variables
+
+// oulu-functions-after-variables (functions need variables)
+@import oulu-functions-after-variables
+
+// mixins
+@import oulu-mixins
+
+//////////////
+// initializers
+//////////////
+
+@import oulu-initializers
+
+//////////////
 // helpers
-@import helpers/block
-@import helpers/border
-@import helpers/font-awsome
-@import helpers/margin-padding
-@import helpers/position
-@import helpers/typoglaphy
-@import helpers/visibility
+//////////////
+
+@import oulu-helpers
