@@ -1,0 +1,13 @@
+machine:
+  ruby:
+    version: 2.4.0
+  node:
+    version: 8.2.0
+dependencies:
+  pre:
+    - gem install sass
+    - npm install node-sass
+test:
+  override:
+    - node-sass app/assets/stylesheets/_oulu.sass > /tmp/oulu.css
+    - sass app/assets/stylesheets/_oulu.sass > /tmp/oulu.css
