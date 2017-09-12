@@ -1,0 +1,131 @@
+=set-button-size($font-size, $button-height, $horizontal-padding, $vertical-padding)
+  font-size: $font-size
+  min-height: $button-height
+  +padding(horizontal, ($font-size * $horizontal-padding))
+  +padding(vertical, $vertical-padding)
+
+=button-style-border($color)
+  color: $color
+  border-color: $color
+  &:hover
+    background-color: rgba($color, .2)
+  &:active
+    background-color: $color
+    color: luma_contrast_color($color)
+
+=button-style-colord($color)
+  color: luma_contrast_color($color)
+  background-color: $color
+  &:hover
+    background-color: darken($color, 20%)
+  &:active
+    background-color: darken($color, 20%)
+
+.is-button
+  line-height: 1.45
+  transition: all .2s ease-in
+  i,
+  .is-button__icon
+    margin-right: .4em
+  &.is-xs
+    $font-size: $xs-button-font-size
+    $button-height: $font-size * $button-xs-height-ratio
+    $vertical-padding: ($button-height - ($font-size * 1.45))/2
+    $horizontal-padding: $button-xs-horizontal-padding
+    +set-button-size($font-size, $button-height, $horizontal-padding, $vertical-padding)
+    &.is-icon
+      font-size: $font-size * 1.5
+    &.is-border
+      +padding(vertical, $vertical-padding - .125rem)
+      &.is-icon
+        +padding(vertical, 0)
+  &.is-sm
+    $font-size: $sm-button-font-size
+    $button-height: $font-size * $button-sm-height-ratio
+    $vertical-padding: ($button-height - ($font-size * 1.45))/2
+    $horizontal-padding: $button-sm-horizontal-padding
+    +set-button-size($font-size, $button-height, $horizontal-padding, $vertical-padding)
+    &.is-icon
+      font-size: $font-size * 1.5
+    &.is-border
+      +padding(vertical, $vertical-padding - .125rem)
+      &.is-icon
+        +padding(vertical, 0)
+  &.is-md
+    $font-size: $md-button-font-size
+    $button-height: $font-size * $button-md-height-ratio
+    $vertical-padding: ($button-height - ($font-size * 1.45))/2
+    $horizontal-padding: $button-md-horizontal-padding
+    +set-button-size($font-size, $button-height, $horizontal-padding, $vertical-padding)
+    &.is-icon
+      font-size: $font-size * 1.5
+    &.is-border
+      +padding(vertical, $vertical-padding - .125rem)
+      &.is-icon
+        +padding(vertical, 0)
+  &.is-lg
+    $font-size: $lg-button-font-size
+    $button-height: $font-size * $button-lg-height-ratio
+    $vertical-padding: ($button-height - ($font-size * 1.45))/2
+    $horizontal-padding: $button-lg-horizontal-padding
+    +set-button-size($font-size, $button-height, $horizontal-padding, $vertical-padding)
+    &.is-icon
+      font-size: $font-size * 1.5
+    &.is-border
+      +padding(vertical, $vertical-padding - .125rem)
+      &.is-icon
+        +padding(vertical, 0)
+  &.is-xl
+    $font-size: $xl-button-font-size
+    $button-height: $font-size * $button-xl-height-ratio
+    $vertical-padding: ($button-height - ($font-size * 1.45))/2
+    $horizontal-padding: $button-xl-horizontal-padding
+    +set-button-size($font-size, $button-height, $horizontal-padding, $vertical-padding)
+    &.is-icon
+      font-size: $font-size * 1.5
+    &.is-border
+      +padding(vertical, $vertical-padding - .125rem)
+      &.is-icon
+        +padding(vertical, 0)
+  &.is-icon
+    +padding(vertical, 0)
+
+  &.is-border-radius
+    border-radius: .25rem
+    .is-button-group li:first-child &
+      +border-radius(left, .25rem)
+    .is-button-group li:last-child &
+      +border-radius(right, .25rem)
+  &.is-left-border-radius
+    +border-radius(left, .25rem)
+  &.is-right-border-radius
+    +border-radius(right, .25rem)
+
+  &.is-border
+    border: solid .0625rem
+    .is-button-group li:not(:last-child) &
+      border-right: none
+    &.is-primary
+      +button-style-border($primary)
+    &.is-secondary
+      +button-style-border($secondary)
+    &.is-warning
+      +button-style-border($warning)
+    &.is-danger
+      +button-style-border($danger)
+    &.is-info
+      +button-style-border($info)
+
+  &.is-colord
+    .is-button-group li:not(:last-child) &
+      border-right: none
+    &.is-primary
+      +button-style-colord($primary)
+    &.is-secondary
+      +button-style-colord($secondary)
+    &.is-warning
+      +button-style-colord($warning)
+    &.is-danger
+      +button-style-colord($danger)
+    &.is-info
+      +button-style-colord($info)
