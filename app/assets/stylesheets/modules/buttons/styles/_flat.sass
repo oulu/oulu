@@ -28,6 +28,7 @@
   &.is-checkbox
     &:before
       box-shadow: $color 0 0 0 1px
+      background-color: darken($color, 20%)
 
   // checked
   &.is-checked
@@ -46,6 +47,8 @@
   // disabled
   &.is-disabled,
   &:disabled
-    $color: if(luma_bright($color), shade($color, 20%), tint($color, 20%))
+    $background-color: darken($color, 20%)
+    $color: if(luma_bright($color), shade($color, 30%), tint($color, 30%))
     color: rgba($color, .7)
     border-color: $color
+    box-shadow: none
