@@ -9,7 +9,8 @@
   border-color: $color
   &:hover
     background-color: rgba($color, .2)
-  &:active
+  &:active,
+  &.is-active
     background-color: $color
     color: luma_contrast_color($color)
 
@@ -18,7 +19,8 @@
   background-color: $color
   &:hover
     background-color: darken($color, 20%)
-  &:active
+  &:active,
+  &.is-active
     background-color: darken($color, 20%)
 
 .is-button
@@ -27,6 +29,10 @@
   i,
   .is-button__icon
     margin-right: .4em
+  &.is-icon
+    i,
+    .is-button__icon
+      margin-right: 0
   &.is-xs
     $font-size: $xs-button-font-size
     $button-height: $font-size * $button-xs-height-ratio
