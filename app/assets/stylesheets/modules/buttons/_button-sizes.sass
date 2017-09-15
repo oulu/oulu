@@ -1,8 +1,29 @@
 =set-button-size($font-size, $button-height, $horizontal-padding, $vertical-padding)
   font-size: $font-size
   min-height: $button-height
-  +padding(horizontal, ($font-size * $horizontal-padding))
+  $horizontal-padding-width: $font-size * $horizontal-padding
+  +padding(horizontal, $horizontal-padding-width)
   +padding(vertical, $vertical-padding)
+  &.is-icon
+    font-size: $font-size * 1.5
+  &.is-radio
+    $radio-input-size: $font-size * 1.25
+    $radio-check-icon-size: $font-size * .6
+    padding-left: $radio-input-size + $horizontal-padding-width
+    &::before
+      +size($radio-input-size)
+      +position(absolute, left $horizontal-padding-width, top 50%)
+      margin-top: $radio-input-size / -2
+    &.is-active
+      &::after
+        +size($radio-check-icon-size)
+        +position(absolute, left $horizontal-padding-width, top 50%)
+        margin-top: $radio-check-icon-size / -2
+        margin-left: ($radio-input-size - $radio-check-icon-size) / 2
+  &.is-border
+    +padding(vertical, $vertical-padding - .125rem)
+    &.is-icon
+      +padding(vertical, 0)
 
 =button-style-border($color)
   color: $color
@@ -13,6 +34,17 @@
   &.is-active
     background-color: $color
     color: luma_contrast_color($color)
+  &.is-radio
+    &::before
+      border: solid .0625rem
+    &:hover
+      &::before
+        box-shadow: 0 0 2px 1px $info
+    &.is-active
+      &::before
+        border-color: $warning
+    &::after
+      background-color: $warning
 
 =button-style-colord($color)
   color: luma_contrast_color($color)
@@ -39,62 +71,45 @@
     $vertical-padding: ($button-height - ($font-size * 1.45))/2
     $horizontal-padding: $button-xs-horizontal-padding
     +set-button-size($font-size, $button-height, $horizontal-padding, $vertical-padding)
-    &.is-icon
-      font-size: $font-size * 1.5
-    &.is-border
-      +padding(vertical, $vertical-padding - .125rem)
-      &.is-icon
-        +padding(vertical, 0)
   &.is-sm
     $font-size: $sm-button-font-size
     $button-height: $font-size * $button-sm-height-ratio
     $vertical-padding: ($button-height - ($font-size * 1.45))/2
     $horizontal-padding: $button-sm-horizontal-padding
     +set-button-size($font-size, $button-height, $horizontal-padding, $vertical-padding)
-    &.is-icon
-      font-size: $font-size * 1.5
-    &.is-border
-      +padding(vertical, $vertical-padding - .125rem)
-      &.is-icon
-        +padding(vertical, 0)
   &.is-md
     $font-size: $md-button-font-size
     $button-height: $font-size * $button-md-height-ratio
     $vertical-padding: ($button-height - ($font-size * 1.45))/2
     $horizontal-padding: $button-md-horizontal-padding
     +set-button-size($font-size, $button-height, $horizontal-padding, $vertical-padding)
-    &.is-icon
-      font-size: $font-size * 1.5
-    &.is-border
-      +padding(vertical, $vertical-padding - .125rem)
-      &.is-icon
-        +padding(vertical, 0)
   &.is-lg
     $font-size: $lg-button-font-size
     $button-height: $font-size * $button-lg-height-ratio
     $vertical-padding: ($button-height - ($font-size * 1.45))/2
     $horizontal-padding: $button-lg-horizontal-padding
     +set-button-size($font-size, $button-height, $horizontal-padding, $vertical-padding)
-    &.is-icon
-      font-size: $font-size * 1.5
-    &.is-border
-      +padding(vertical, $vertical-padding - .125rem)
-      &.is-icon
-        +padding(vertical, 0)
   &.is-xl
     $font-size: $xl-button-font-size
     $button-height: $font-size * $button-xl-height-ratio
     $vertical-padding: ($button-height - ($font-size * 1.45))/2
     $horizontal-padding: $button-xl-horizontal-padding
     +set-button-size($font-size, $button-height, $horizontal-padding, $vertical-padding)
-    &.is-icon
-      font-size: $font-size * 1.5
-    &.is-border
-      +padding(vertical, $vertical-padding - .125rem)
-      &.is-icon
-        +padding(vertical, 0)
+
   &.is-icon
     +padding(vertical, 0)
+
+  &.is-radio
+    +position(relative)
+    &::before
+      content: ""
+      display: block
+      border-radius: 50%
+    &.is-active
+      &::after
+        content: ""
+        display: block
+        border-radius: 50%
 
   &.is-border-radius
     border-radius: .25rem

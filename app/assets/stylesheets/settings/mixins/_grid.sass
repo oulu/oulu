@@ -4,11 +4,7 @@
 
 .#{$container-class-name}
   +make-container
-
-  // For each breakpoint, define the maximum width of the container in a media query
-  @each $breakpoint, $container-max-width in $container-max-widths
-    +media-breakpoint-up($breakpoint)
-      max-width: $container-max-width
+  max-width: $container-max-width
 
 // Fluid container
 //
