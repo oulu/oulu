@@ -37,7 +37,7 @@
   text-indent: $space-width
 
 =ellipsis($max-width: 100%)
-  display: inline-flex
+  display: inline-block
   max-width: $max-width
   overflow: hidden
   text-overflow: ellipsis
@@ -49,3 +49,8 @@
   -webkit-line-clamp: $lines
   overflow: hidden
   max-height: (1em * $line-height) * $lines
+
+=word-break
+  overflow-wrap: break-word
+  word-break: break-all
+  white-space: normal
