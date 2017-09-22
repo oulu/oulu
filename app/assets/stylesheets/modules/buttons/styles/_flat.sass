@@ -3,6 +3,9 @@
   background-color: $color
   box-shadow: shade($color, 20%) 0 .125rem 0
   transition: background-color .2s ease-in, top .2s ease-in
+  border: solid .0625rem transparent
+  @if luma($color) > 70
+    border: solid .0625rem rgba(black, .15)
   &:link,
   &:visited
     color: luma_contrast_color($color)
@@ -40,6 +43,7 @@
 
   // select
   &.is-select
+    border: solid 1px rgba(black, .15)
     &:after
       color: $color
       border-left: 1px solid $color
