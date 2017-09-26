@@ -152,10 +152,20 @@
     @else
       border-right-width: $border-width / 2
 
+
 // button-grounp
 .is-button-group >li [class*="is-button"]
   border-radius: 0
 
+// multi-lines-button-grounp
+.is-multi-lines-button-group
+  display: flex
+  flex-wrap: wrap
+
+.is-multi-lines-button-group >li
+  flex: 0 0 50%
+  +media-breakpoint-down(sm)
+    flex: 0 0 100%
 
 =button-group
   .is-button-group
