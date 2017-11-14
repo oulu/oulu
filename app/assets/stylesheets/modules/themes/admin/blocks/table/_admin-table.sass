@@ -1,0 +1,71 @@
+$admin-table-font-size: .75rem
+
+.admin-table
+  width: 100%
+  +margin(vertical, 1.25rem)
+  +padding(horizontal, 1rem)
+  +media-breakpoint-down(sm)
+    +padding(horizontal, .5rem)
+    .container &
+      +padding(horizontal, 0)
+
+.admin-table__inner
+  overflow-x: auto
+
+.admin-table__table
+  min-width: 100%
+  background-color: $admin-base-color
+  font-size: $admin-table-font-size
+
+.admin-table__header-label,
+.admin-table__header-value,
+.admin-table__body-label,
+.admin-table__body-value,
+.admin-table-body-actions
+  border: solid .0625rem $admin-border
+  +text-block(1em 1.4)
+  padding: .5em 1em
+  +media-breakpoint-down(sm)
+    font-size: .75rem
+
+.admin-table__body-item
+  &:nth-child(even)
+    background-color: $admin-background
+
+.admin-table__body-label,
+.admin-table__header-label
+  font-weight: 600
+  background-color: $admin-background-dark
+  border: solid .0625rem $admin-border-shade
+  color: $admin-default-text
+  white-space: nowrap
+
+
+.admin-table__body-label
+  vertical-align: top
+  text-align: right
+  width: 15rem
+  +media-breakpoint-down(sm)
+    text-align: left
+    width: auto
+  .admin-table__body-item:nth-child(even) &
+    background-color: $admin-background-dark-more
+
+.admin-table__body-value
+  +long-text-style(.8125rem, .75rem)
+
+.admin-table-body-actions__items
+  display: flex
+  align-items: center
+  justify-content: center
+  +media-breakpoint-down(sm)
+    display: block
+
+.admin-table-body-actions__item
+  flex: 0 0 2.75em
+  +padding(horizontal, .25em)
+  +media-breakpoint-down(sm)
+    &:not(:last-child)
+      margin-bottom: .5rem
+  a
+    text-decoration: none

@@ -1,0 +1,38 @@
+=amazlet
+  .amazlet-box
+    +margin(vertical, 1.5em 2em)
+    .amazlet-image
+      float: none !important
+      margin: 0 0 16px !important
+      a[target="_blank"]
+        &:after
+          content: none
+      img
+        max-width: 100%
+        width: 260px
+        display: block
+        +margin(horizontal, auto)
+        margin-bottom: 0 !important
+  .amazlet-info
+    text-align: center
+    margin-bottom: 0 !important
+  .amazlet-name
+    font-size: .875em
+    margin-bottom: .25em !important
+    a
+      text-decoration: none
+      color: $root-color
+  .amazlet-detail
+    font-size: .75em
+    margin-bottom: 0 !important
+  .amazlet-sub-info
+    float: none !important
+    text-align: right
+  .amazlet-link
+    display: none
+  .amazlet-powered-date
+    display: none !important
+  .amazlet-box:last-child
+    margin-top: 4em
+    .amazlet-image img
+      width: 10em

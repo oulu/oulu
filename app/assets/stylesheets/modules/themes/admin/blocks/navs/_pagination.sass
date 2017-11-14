@@ -1,0 +1,63 @@
+.pagination
+  display: flex
+  justify-content: center
+  margin-bottom: 1rem
+  +media-breakpoint-down(md)
+    align-items: center
+    justify-content: center
+  .admin-table__inner + &
+    +margin(vertical, 1rem 0)
+
+.pagination__page-count
+  display: none
+  +media-breakpoint-down(md)
+    +text-block(.75rem 1, center block)
+    +margin(horizontal, 1.25rem)
+    .pagination.is-first &
+      margin-left: 3.5rem
+    .pagination.is-last &
+      margin-right: 3.5rem
+
+.pagination__item
+  +text-block(.75rem 1, center flex)
+  align-items: center
+  justify-content: center
+  +size(1.75rem)
+  border: solid .0625rem $admin-border
+  &:not(:first-child)
+    border-left: none
+  &.is-current
+    background-color: $admin-background-dark
+    color: $admin-default-text
+  &.is-gap
+    +border(vertical, none)
+  &.is-prev,
+  &.is-next
+    +media-breakpoint-down(md)
+      +size(2.25rem)
+      border: none
+      a
+        border: solid .0625rem $admin-border
+        +size(2.25rem)
+        border-radius: .25rem
+  &.is-page,
+  &.is-first,
+  &.is-last
+    +media-breakpoint-down(md)
+      display: none
+
+.pagination__link
+  border: none
+  +size(100%)
+  +flex-link
+  align-items: center
+  justify-content: center
+  color: $admin-muted-text
+  background-color: $admin-base-color
+  &:link,
+  &:visited
+    color: $admin-muted-text
+  &:hover,
+  &:active
+    color: $admin-default-text
+    background-color: $admin-background-shade

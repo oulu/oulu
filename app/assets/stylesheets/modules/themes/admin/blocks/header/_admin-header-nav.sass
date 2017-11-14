@@ -1,0 +1,22 @@
+.admin-header-nav
+  +media-breakpoint-down(sm)
+    display: none
+
+.admin-header-nav__items
+  display: flex
+  border-radius: .25rem
+  +margin(horizontal, -.25rem)
+
+.admin-header-nav__item
+  display: block
+  +padding(horizontal, .25rem)
+
+.admin-header-nav__item-link
+  +text-block(.75rem 1, flex $admin-muted-text)
+  border: solid .0625rem $admin-border
+  +size(auto 1.75rem)
+  +padding(horizontal, 1.4em)
+  align-items: center
+  border-radius: .25rem
+  &:hover
+    background-color: $admin-background

@@ -1,0 +1,45 @@
+$admin-breadcrumbs-height: 1.5rem
+
+.admin-breadcrumbs
+  background-color: $admin-base-color
+  border-bottom: solid .0625rem $admin-border
+  +media-breakpoint-down(sm)
+    display: none
+
+.admin-breadcrumbs__items
+  height: 1.75rem
+  display: flex
+  flex-wrap: wrap
+  align-items: center
+
+.admin-breadcrumbs__item
+  +position(relative)
+  padding-right: $admin-breadcrumbs-height
+  &::before
+    content: ">"
+    +text-block(.875rem 1, $admin-muted-text flex)
+    +position(absolute, right 0, top 0)
+    +size($admin-breadcrumbs-height)
+    align-items: center
+    justify-content: center
+  &:last-child
+    padding-right: 0
+    &::before
+      content: none
+
+.admin-breadcrumbs__item-link
+  +text-block(.75rem 1.3, $admin-muted-text flex)
+  +hover-link
+  height: $admin-breadcrumbs-height
+  align-items: center
+  &:hover
+    color: $admin-link-text
+  .admin-breadcrumbs__item:last-child &,
+  .admin-breadcrumbs__item:last-child &:hover
+    text-decoration: none
+    cursor: default
+    color: $admin-muted-text
+  &.is-home
+    font-size: 1rem
+    +padding(horizontal, .125rem)
+    margin-left: -.125rem

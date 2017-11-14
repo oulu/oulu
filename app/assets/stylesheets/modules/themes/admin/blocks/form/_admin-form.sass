@@ -1,0 +1,117 @@
+=text-input-style
+  border: solid .0625rem $admin-text-input-border
+  background-color: $admin-text-input-background
+  transition: color .2s ease-in, background-color .2s ease-in
+  box-shadow: rgba(black, .1) 0 1px 1px inset
+  padding: .375rem
+  +text-block(.875rem 1.5)
+  border-radius: .1875rem
+  width: 100%
+  +media-breakpoint-down(sm)
+    padding: .25rem .375rem
+    font-size: 1rem
+  &:focus
+    border-color: $admin-focused-text-input-border
+    background-color: $admin-focused-text-input-background
+    box-shadow: $admin-focused-text-input-border 0 0 .1875rem
+  .field_with_errors &
+    border-color: $danger
+    background-color: tint($danger, 80%)
+    &:focus
+      border-color: $admin-focused-text-input-border
+      box-shadow: $admin-focused-text-input-border 0 0 .1875rem
+
+.admin-form
+  +padding(vertical, 1.25rem)
+  &.is-search
+    +padding(vertical, 1.25rem 0)
+    .container
+      +media-breakpoint-down(sm)
+        +padding(horizontal, 0)
+    .admin-form__form
+      background-color: $admin-background
+      border: solid .0625rem $admin-border-tint
+      padding: 1rem
+
+.admin-form-item
+  margin-bottom: 1.5rem
+  &:last-child
+    margin-bottom: 0
+  &.is-inline
+    +media-breakpoint-up(md)
+      display: flex
+      .admin-form-item__label-area
+        flex: 0 0 12rem
+        padding-right: 1rem
+        margin-bottom: 0
+        display: flex
+        align-items: center
+      .admin-form-item__label
+        +text-block(.8125rem 1.45, right block)
+        width: 100%
+      .admin-form-item__input-area
+        flex: 100
+
+.admin-form-item__label-area
+  margin-bottom: .5rem
+
+.admin-form-item__label
+  +text-block(1rem 1.45, 600 block)
+  +media-breakpoint-down(sm)
+    font-size: .8125rem
+  &.is-required
+    &::before
+      content: "必須"
+      +text-block(.625rem 1, 400 $danger)
+      border: solid .0625rem $danger
+      padding: .0625rem .125rem
+      margin-right: .25rem
+      +top(-.0625rem)
+      border-radius: .125rem
+  abbr
+    color: $danger
+
+.admin-form-item__label-area-description
+  p
+    +text-block(.75rem 1.45)
+
+.admin-form-item__input-area-description
+  margin-top: .25rem
+  p
+    +text-block(.75rem 1.45)
+
+.admin-form-item__text-input
+  +text-input-style
+  max-width: 100%
+  &.is-xs
+    width: 4rem
+  &.is-sm
+    width: 8rem
+  &.is-md
+    width: 14rem
+  &.is-lg
+    width: 20rem
+  &.is-xl
+    width: 26rem
+
+.admin-form-item__textarea
+  +text-input-style
+  min-height: 11.25rem
+  overflow: hidden
+
+.admin-form-item__radios
+  display: flex
+  flex-wrap: wrap
+  +margin(horizontal, -.5rem)
+
+.admin-form-item__radios-item
+  +padding(horizontal, .5rem)
+
+.admin-form-item__select
+  border: solid .0625rem
+  cursor: pointer
+  +text-input-style
+  +position(relative)
+  height: 2.25em
+  appearance: menulist-button
+  -webkit-appearance: menulist-button

@@ -1,0 +1,19 @@
+.admin-header
+  border-bottom: solid .125rem $admin-main-color
+  background-color: $admin-base-color
+
+.admin-header__inner
+  display: flex
+  justify-content: space-between
+  align-items: center
+  height: 3.25rem
+  +media-breakpoint-down(sm)
+    height: 3rem
+
+.admin-header__title
+  +text-block(1.25rem 1, $admin-main-color 700)
+  +media-breakpoint-down(sm)
+    font-size: 1rem
+
+.admin-header__title-link
+  color: $admin-main-color

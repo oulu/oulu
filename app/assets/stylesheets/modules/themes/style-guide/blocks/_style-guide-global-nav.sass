@@ -1,0 +1,32 @@
+.style-guide-global-nav
+  width: 5rem
+  +position(fixed, left 0, top 0, bottom 0)
+  background-color: $main-color
+  +media-breakpoint-down(sm)
+    display: none
+
+.style-guide-global-nav__items
+  display: flex
+  flex-direction: column
+
+.style-guide-global-nav__item
+  display: flex
+  +size(5rem 4.5rem)
+  border-bottom: .0625rem solid tint($main-color, 40%)
+
+.style-guide-global-nav__item-link
+  +flex-link
+  flex-direction: column
+  +size(100%)
+  justify-content: center
+  align-items: center
+
+.style-guide-global-nav__item-link-icon
+  display: flex
+  +size(2.75rem)
+  justify-content: center
+  align-items: center
+  +text-block(1.75rem 1, center $reversal-text)
+
+.style-guide-global-nav__item-link-label
+  +text-block(.75rem 1.4 center, $reversal-text 600)

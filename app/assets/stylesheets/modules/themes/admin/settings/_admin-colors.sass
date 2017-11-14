@@ -1,0 +1,101 @@
+//////////////////////
+// UI Colors
+//////////////////////
+
+$primary: #007bff !default
+$secondary: #868e96 !default
+$warning: #ffc107 !default
+$danger: #dc3545 !default
+$info: #28a745 !default
+
+$base-color: #fff
+
+//////////////////////
+// Bland Colors
+//////////////////////
+
+$admin-main-color: #0e5287 !default
+$admin-base-color: #fff !default
+
+$admin-background: #f8f8f8 !default
+$admin-background-shade: #e3e3e3 !default
+$admin-background-dark: #d9d9d9 !default
+$admin-background-dark-more: #ccc !default
+
+//////////////////////
+// Text Colors
+//////////////////////
+
+$admin-default-text: #333 !default
+$admin-reversal-text: #fff !default
+$admin-muted-text: #7c7c7c !default
+$admin-danger-text: #CC3434 !default
+
+$admin-link-text: #1A0DAB !default
+$admin-visited-text: #660099 !default
+$admin-hover-text: $admin-danger-text !default
+$admin-active-text: $admin-danger-text !default
+
+=admin-default-text-link
+  &:link
+    color: $admin-link-text
+  &:visited
+    color: $admin-visited-text
+  &:hover
+    color: $admin-hover-text
+  &:active
+    color: $admin-active-text
+
+//////////////////////
+// Border Colors
+//////////////////////
+
+$admin-border: #c8c8c8 !default
+$admin-border-shade: #9f9f9f !default
+$admin-border-tint: #dddddd !default
+
+//////////////////////
+// Form Colors
+//////////////////////
+
+$admin-text-input-background: #fcfcfc !default
+$admin-text-input-border: $admin-border !default
+$admin-focused-text-input-background: $admin-base-color !default
+$admin-focused-text-input-border: tint($admin-main-color, 40%) !default
+$admin-form-check: #2476ff !default
+$admin-flash-alert-background: #f8d7da !default
+$admin-flash-alert-text: #721c24 !default
+$admin-flash-notice-background: #d4edda !default
+$admin-flash-notice-text: #155724 !default
+$admin-placeholder-text: #afafaf !default
+$admin-text-input: $admin-default-text !default
+
+#{$all-text-inputs}
+  color: $admin-text-input
+
+
+
+
+$root-font-family: $basic-sans-serif
+
+$xs-button-font-size: .625rem
+$sm-button-font-size: .75rem
+$md-button-font-size: .8125rem
+$lg-button-font-size: .875rem
+$xl-button-font-size: 1rem
+
+$button-sizes: xs, sm, md, lg, xl !default
+$button-color-names: secondary, primary, success, info, warning, danger !default
+$button-styles: flat
+
+$button-xs-height-ratio: 2.85 !default
+$button-sm-height-ratio: 2.6
+$button-md-height-ratio: 2.8
+$button-lg-height-ratio: 3
+$button-xl-height-ratio: 2.9
+
+$button-xs-horizontal-padding: 1
+$button-sm-horizontal-padding: 1
+$button-md-horizontal-padding: .5
+$button-lg-horizontal-padding: 1
+$button-xl-horizontal-padding: 1

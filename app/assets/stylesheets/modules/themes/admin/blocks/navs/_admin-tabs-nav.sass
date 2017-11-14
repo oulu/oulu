@@ -1,0 +1,49 @@
+$admin-tabs-nav-font-size: .75rem
+$admin-tabs-nav-height: 3em
+
+.admin-tabs-nav
+  font-size: $admin-tabs-nav-font-size
+  +overflow(auto hidden)
+  -webkit-overflow-scrolling: touch
+  position: relative
+  padding-top: .5em
+  background-color: $admin-background-shade
+  &.has-scroll-x
+    height: calc($admin-tabs-nav-height + .9375rem)
+    +media-breakpoint-down(md)
+      height: $admin-tabs-nav-height
+  &::before
+    content: ''
+    +size(100% 1px)
+    background-color: $admin-border
+    display: block
+    +position(absolute, left 0, bottom 0)
+
+.admin-tabs-nav__items
+  display: flex
+  +position(relative)
+  .admin-tabs-nav >&
+    +padding(horizontal, 1rem)
+
+.admin-tabs-nav__item-link
+  +text-block(1em 1.3, flex $admin-muted-text)
+  align-items: center
+  justify-content: center
+  +size(auto $admin-tabs-nav-height)
+  padding-bottom: .0625rem
+  +padding(horizontal, 1em)
+  border: .0625rem solid transparent
+  +border-radius(top, .1875rem)
+  transition: all .2s ease-in
+  min-width: 9em
+  &.is-active,
+  &.is-active:hover
+    border-color: $admin-border
+    border-bottom-color: $admin-base-color
+    background-color: $admin-base-color
+    color: $admin-default-text
+    text-decoration: none
+    cursor: default
+  &:hover
+    color: $admin-default-text
+    text-decoration: underline

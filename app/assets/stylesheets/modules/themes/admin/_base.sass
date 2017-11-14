@@ -1,0 +1,31 @@
+html
+  background-color: $admin-base-color
+  color: $admin-default-text
+
+.container
+  +media-breakpoint-down(sm)
+    +padding(horizontal, .5rem)
+  &.is-sm
+    max-width: 24rem
+  &.is-md
+    max-width: 45rem
+  &.is-lg
+    max-width: 54rem
+
+a
+  transition: all .2s ease-in
+
+\:placeholder-shown
+  color: $admin-placeholder-text
+::-webkit-input-placeholder
+  color: $admin-placeholder-text
+\:-moz-placeholder
+  opacity: 1
+  color: $admin-placeholder-text
+::-moz-placeholder
+  opacity: 1
+  color: $admin-placeholder-text
+\:-ms-input-placeholder
+  color: $admin-placeholder-text
+.placeholder
+  color: $admin-placeholder-text

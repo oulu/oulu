@@ -1,0 +1,18 @@
+=disabled-h1($disabled-h1, $pc-font-size, $mobile-font-size)
+  @if $disabled-h1 = true
+    h1
+      color: transparent
+      height: 1.75rem
+      font-size: .5rem
+      +position(relative)
+      +media-breakpoint-down(sm)
+        height: 3.25rem
+      &::before
+        +text-block($pc-font-size 1.45 .5em, $reversal-text flex)
+        align-items: center
+        content: "要修正: 本文中の見出しは h1（#）は使わず h2（##）から始めてください"
+        background-color: red
+        +padding(horizontal, .5rem)
+        +position(absolute, left 0, top 0, right 0, bottom 0)
+        +media-breakpoint-down(sm)
+          font-size: $mobile-font-size

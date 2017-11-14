@@ -1,0 +1,33 @@
+.admin-form-file
+  text-align: center
+
+.admin-form-file__image
+  margin-bottom: .75rem
+  +size(6rem)
+  display: flex
+  align-items: center
+  justify-content: center
+  +margin(horizontal, auto)
+
+.admin-form-file__image-name
+  display: none
+  +text-block(.75rem 1 .75rem, center)
+  &.is-shown
+    display: block
+
+.admin-form-file__action
+  +position(relative)
+
+[class*="is-button-"].is-file
+  input
+    opacity: 0
+    +position(absolute, left 0, top 0)
+    +size(0)
+    overflow: hidden
+
+.admin-form-file__action-label
+  display: none
+  .admin-form-file.is-unuploaded &.is-unuploaded
+    display: block
+  .admin-form-file.is-uploaded &.is-uploaded
+    display: block

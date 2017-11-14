@@ -1,0 +1,21 @@
+.admin-table-sort
+  display: flex
+  align-items: center
+
+.admin-table-sort__label
+  flex: 100
+
+.admin-table-sort__items
+  display: flex
+  +margin(vertical, -.25rem)
+
+.admin-table-sort__link
+  +text-block(1rem 1, flex $admin-default-text)
+  align-items: center
+  justify-content: center
+  +size(1.5rem)
+  border-radius: .25rem
+  .admin-table__table &
+    text-decoration: none
+  &:hover
+    background-color: $admin-background

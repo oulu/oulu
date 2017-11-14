@@ -1,0 +1,35 @@
+.admin-actions
+  margin-top: 1.5rem
+
+.admin-actions__items
+  display: flex
+  justify-content: center
+  align-items: baseline
+  +margin(horizontal, -.5rem)
+  +media-breakpoint-down(sm)
+    display: block
+    +margin(horizontal, 0)
+
+.admin-actions__item
+  display: block
+  +padding(horizontal, .5rem)
+  +media-breakpoint-down(sm)
+    +padding(horizontal, 0)
+    &:not(:last-child)
+      margin-bottom: 1.25rem
+
+.admin-actions__item-action
+  &.is-main
+    min-width: 16rem
+    +padding(horizontal, .75rem)
+    +media-breakpoint-down(sm)
+      width: 100%
+      min-width: 0
+  &.is-sub
+    +hover-link-reversal
+    +text-block(.8125rem 1, block center)
+    color: $admin-link-text
+    i
+      margin-right: .5rem
+  &.is-danger
+    color: $admin-danger-text

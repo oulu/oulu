@@ -1,0 +1,58 @@
+.admin-flash
+  overflow: hidden
+  border-bottom: solid .0625rem
+  &.is-alert
+    background-color: $admin-flash-alert-background
+    border-color: $admin-flash-alert-text
+    color: $admin-flash-alert-text
+  &.is-notice
+    background-color: $admin-flash-notice-background
+    border-color: $admin-flash-notice-text
+    color: $admin-flash-notice-text
+  &.is-hidden
+    animation: fade-out 1s ease 0s forwards
+    body.is-ie11 &,
+    body.is-edge &
+      display: none
+
+.admin-flash__inner
+  padding: .75rem 2.75rem .75rem 0
+  +position(relative)
+  +media-breakpoint-down(sm)
+    padding-left: 1.625rem
+
+.admin-flash__title
+  +text-block(.875rem 1.45 .5rem)
+
+.admin-flash__item
+  +text-block(.8125rem 1.45 .25rem)
+  &:last-child
+    margin-bottom: 0
+
+.admin-flash__message
+  +text-block(.8125rem 1.45, center)
+
+.admin-flash__close
+  +position(absolute, right 0, top -.0625rem)
+  +size(2.75rem)
+  +text-block(2rem 1, flex)
+  align-items: center
+  justify-content: center
+  opacity: .7
+  cursor: pointer
+  transition: all .2s ease-in
+  +media-breakpoint-down(sm)
+    left: -.75rem
+  &:hover
+    opacity: 1
+  *
+    cursor: pointer
+
+.admin-flash__close-icon
+  +position(relative, top -.1875rem)
+
+.admin-flash__body
+  p
+    +text-block(.8125rem 1.45, center)
+    +media-breakpoint-down(sm)
+      font-size: .75rem
