@@ -9,7 +9,7 @@ $background: white !default
 $font: #333 !default
 $disabled-h1: false !default
 
-=long-text-style($pc-font-size: 1rem, $mobile-font-size: .8125rem, $background: $base-color, $font: $default-text, $disabled-h1: true)
+=long-text-style($pc-font-size: 1rem, $mobile-font-size: .8125rem, $background: $base-color, $font: $default-text, $disabled-h1: false)
   font-size: $pc-font-size
   +media-breakpoint-down(sm)
     font-size: $mobile-font-size
@@ -19,9 +19,11 @@ $disabled-h1: false !default
     margin-bottom: 0
   +disabled-h1($disabled-h1, $pc-font-size, $mobile-font-size)
   h2
-    +text-block(1.625em 1.4 1em, 600)
+    +text-block(1.625em 1.4 .75em, 600)
     padding-bottom: .25em
     border-bottom: .0625rem solid mix($font, $background, 20%)
+  h1 + h2
+    margin-top: 1em
   * + h2
     margin-top: 1.4em
 
@@ -49,8 +51,15 @@ $disabled-h1: false !default
   code
     +source-code-pro
   pre
+    padding: 0
+    margin-bottom: 1.5em
     code
-      +text-block(.875em 1.5)
+      border: solid .0625rem mix($font, $background, 20%)
+      +text-block(.9375em 1.5)
+      overflow: auto
+      display: block
+      width: 100%
+      padding: .875em
   p,
   li
     code

@@ -1,5 +1,5 @@
 =disabled-h1($disabled-h1, $pc-font-size, $mobile-font-size)
-  @if $disabled-h1 = true
+  @if $disabled-h1
     h1
       color: transparent
       height: 1.75rem
@@ -16,3 +16,8 @@
         +position(absolute, left 0, top 0, right 0, bottom 0)
         +media-breakpoint-down(sm)
           font-size: $mobile-font-size
+  @else
+    h1
+      +text-block(2em 1.4 .75em, 600)
+    * + h1
+      margin-top: 1.2em

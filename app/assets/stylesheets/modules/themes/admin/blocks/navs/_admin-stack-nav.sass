@@ -32,3 +32,20 @@ body
 .admin-stack-nav__item-link-icon
   font-size: 1.125em
   margin-right: .5em
+
+.admin-stack-nav-children__item
+  &:not(:last-child)
+    border-bottom: solid .0625rem rgba(white, .15)
+
+.admin-stack-nav-children__item-link
+  +text-block(1em 1.4, $admin-reversal-text flex)
+  padding: .875em
+  min-height: 3.15em
+  align-items: center
+  background-color: shade($admin-main-color, 20%)
+  &:hover
+    background-color: shade($admin-main-color, 20%)
+  &.is-current
+    background-color: shade($admin-main-color, 30%)
+    &:hover
+      background-color: shade($admin-main-color, 30%)
