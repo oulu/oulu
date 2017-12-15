@@ -42,8 +42,7 @@
   letter-spacing: .5px
   +waves-effect($color)
   &:hover,
-  .hover,
-  .is-hover
+  .hover
     $color: lighten($color, 5%)
     box-shadow: 0 5px 11px 0 rgba(black, .18), 0 4px 15px 0 rgba(black, .15)
     @if $color == white
@@ -51,8 +50,7 @@
     @else
       background-color: $color
   &:active,
-  .active,
-  .is-active
+  .active
     $color: lighten($color, 6%)
     @if $color == white
       background-color: #f4f4f4

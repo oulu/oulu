@@ -11,14 +11,12 @@
   &:visited
     color: $text-color
   &:hover,
-  &.hover,
-  &.is-hover
+  &.hover
     $color: if(luma_bright($color), shade($color, 15%), tint($color, 15%))
     color: $text-color
     background-color: $color
   &:active,
-  &.active,
-  &.is-active
+  &.active
     color: $text-color
     background-color: $color
     +top(1px)

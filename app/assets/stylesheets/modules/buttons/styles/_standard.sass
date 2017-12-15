@@ -9,22 +9,18 @@
     color: luma_contrast_color($color)
     &:hover,
     &.hover,
-    &.is-hover,
     &:active,
-    &.active,
-    &.is-active
+    &.active
       color: luma_contrast_color($color)
 
 =standard-button($color: blue)
   transition: .5s (background-image)
   +standard-button-color($color)
   &:hover,
-  &.hover,
-  &.is-hover
+  &.hover
     +standard-button-color(darken($color, 10%), false)
   &:active,
-  &.active,
-  &.is-active
+  &.active
     $color: darken($color, 12%)
     box-shadow: darken($color, 16%) 0 1px 1px inset
     +standard-button-color($color, false)

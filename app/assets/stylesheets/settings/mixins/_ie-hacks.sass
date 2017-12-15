@@ -1,4 +1,4 @@
-+ie($versions: all)
+=ie($versions: all)
   @if $versions == 'all'
     &.is-ie
       @content
@@ -6,3 +6,9 @@
     @each $version in $versions
       &.is-ie#{$version}
         @content
+
+=ie-11
+  @media all and (-ms-high-contrast: none)
+    *::-ms-backdrop,
+    &
+      @content

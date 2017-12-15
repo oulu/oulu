@@ -8,10 +8,8 @@
     text-shadow: if(luma_bright($color), lighten($color, 18%) 0 1px 0, darken($color, 18%) 0 -1px 0)
     &:hover,
     &.hover,
-    &.is-hover,
     &:active,
-    &.active,
-    &.is-active
+    &.active
       color: luma_contrast_color($color)
 
 =normal-button($color: blue)
@@ -19,15 +17,13 @@
   +normal-button-color($color)
   box-shadow: tint($color, 32%) 0 1px 0 inset, shade($color, 26%) 0 1px 0, rgba(black, .15) 0 2px 1px
   &:hover,
-  &.hover,
-  &.is-hover
+  &.hover
     @if luma($color) > 90
       +normal-button-color(lighten(#f2f2f2, 5%), false)
     @else
       +normal-button-color(lighten($color, 5%), false)
   &:active,
-  &.active,
-  &.is-active
+  &.active
     +top(1px)
     @if luma($color) > 90
       $color: lighten(#f2f2f2, 7%)
@@ -68,7 +64,7 @@
   &:disabled
     $color: if(luma_bright($color), shade($color, 20%), tint($color, 20%))
     background-color: rgba($color, 7)
-    background-image: none 
+    background-image: none
     color: rgba(luma_contrast_color($color), .7)
     border-color: shade($color, 10%) shade($color, 16%) shade($color, 26%)
     text-shadow: none
