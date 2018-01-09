@@ -36,6 +36,8 @@
     color: luma_contrast_color($button-checked-color)
     background-color: $button-checked-color
     border-color: shade($button-checked-color, 20%)
+    box-shadow: 0 1px 0 shade($button-checked-color, 20%)
+    +top(.0625rem)
     &:before
       box-shadow: luma_contrast_color($button-checked-color) 0 0 0 1px
 
