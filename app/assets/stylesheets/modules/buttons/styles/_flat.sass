@@ -51,8 +51,11 @@
   // disabled
   &.is-disabled,
   &:disabled
-    $background-color: darken($color, 20%)
-    $color: if(luma_bright($color), shade($color, 30%), tint($color, 30%))
+    $disabled-color: desaturate($color, 80%)
+    $background-color: rgba($disabled-color, .5)
+    $border-color: darken($disabled-color, 5%)
+    $color: luma_contrast_color($color)
     color: rgba($color, .7)
-    border-color: $color
     box-shadow: none
+    background-color: $background-color
+    border: none
