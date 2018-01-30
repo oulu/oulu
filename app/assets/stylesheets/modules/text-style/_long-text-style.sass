@@ -3,7 +3,7 @@
 @import amazlet
 @import twitter-tweet
 @import disabled-h1
-@import modules/web-fonts/source-code-pro
+@import ../web-fonts/source-code-pro
 
 $background: white !default
 $font: #333 !default
@@ -42,6 +42,7 @@ $disabled-h1: false !default
   p
     +text-block(1em 1.8 1.5em)
   a
+    word-break: break-all
     +hover-link-reversal
     p &
       word-break: break-all
