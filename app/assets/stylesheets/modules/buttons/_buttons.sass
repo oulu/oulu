@@ -9,6 +9,7 @@
 @import styles/flat-round
 @import styles/super-bold-border
 @import styles/standard
+@import styles/simple
 
 @import button-helper
 @import button-sizes
@@ -41,6 +42,9 @@
   @else if $style == standard
     +button-size($size, .0625rem, .25rem)
     +standard-button($color)
+  @else if $style == simple
+    +button-size($size, false, .1875rem)
+    +simple-button($color)
   @each $option in $options
     @if $option == 'left'
       text-align: left
