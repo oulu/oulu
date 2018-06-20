@@ -8,6 +8,14 @@ $admin-table-font-size: .75rem
     +padding(horizontal, .5rem)
     .container &
       +padding(horizontal, 0)
+  .admin-table + &
+    margin-top: 2rem
+
+.admin-tablet__title
+  border-left: solid 6px $admin-main-color
+  padding-left: .625rem
+  +padding(vertical, .125rem)
+  +text-block(1.125rem 1.4 .875rem, 700)
 
 .admin-table__inner
   overflow-x: auto
@@ -40,6 +48,9 @@ $admin-table-font-size: .75rem
   color: $admin-default-text
   white-space: nowrap
 
+.admin-table__header-label
+  &.is-one-checkbox::before,
+  &.is-one-checkbox::after
 
 .admin-table__body-label
   vertical-align: top

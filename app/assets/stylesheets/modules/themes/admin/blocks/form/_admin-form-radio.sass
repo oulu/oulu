@@ -46,10 +46,18 @@
     +size(.75rem)
     border-radius: .125rem
     +position(absolute, left 0, top 50%)
-    margin-top: -.375rem
+    transform: translate(0, -50%)
     background-color: $admin-background-shade
     border: solid .0625rem $admin-border-shade
     box-shadow: rgba(black, .2) 0 .0625rem .0625rem inset
+  .is-one-checkbox &
+    padding-left: 0
+    +size(100% 1.875rem)
+    +margin(vertical, -.375rem)
+  .is-one-checkbox &::before
+    left: 50%
+    transform: translate(-50%, -50%)
+    margin-left: 0
   &.is-checked
     &::before
       border-color: $admin-form-check
@@ -58,7 +66,17 @@
       +text-block(.75rem 1, $admin-form-check flex)
       align-items: center
       justify-content: center
-      +size(1rem)
+      +size(.75rem)
       border-radius: 50%
-      +position(absolute, left -.125rem, top 50%)
-      margin-top: -.5rem
+      +position(absolute, left 0, top 50%)
+      transform: translate(0, -50%)
+  .is-one-checkbox &.is-checked::after
+    left: 50%
+    transform: translate(-50%, -50%)
+    margin-left: 0
+  &.is-lg
+    &::before
+      +size(1rem)
+    &::after
+      +size(1rem)
+      font-size: 1rem
