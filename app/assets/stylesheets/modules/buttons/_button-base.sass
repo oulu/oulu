@@ -87,7 +87,7 @@
     $button-height: $button-height
     padding-left: $icon-width
     &:before
-      +fa("\f0d7")
+      +fa(fas "\f0d7")
       +position(absolute, left 0, top 0)
       border-right: .0625rem solid shade($secondary, 15%)
       +text-block($icon-size ($button-height - $border-width * 2), center shade($secondary, 55%))
@@ -100,7 +100,7 @@
     position: relative
     overflow: hidden
     &:after
-      +fa("\f0d7")
+      +fa(fas "\f0d7")
       +position(absolute, right 0, top 0, bottom 0, 0)
       +text-block($icon-size 1, center flex)
       align-items: center
@@ -127,7 +127,7 @@
       margin-top: $check-base-size / -2
     &:after
       $check-icon-size: $font-size * 1.4
-      +fa("\f00c")
+      +fa(fas "\f00c")
       opacity: 0
       +size($check-icon-size)
       +text-block($check-icon-size 1, $button-checked-icon-color)
