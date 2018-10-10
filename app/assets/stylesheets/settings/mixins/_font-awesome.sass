@@ -33,3 +33,24 @@
       font-family: 'Font Awesome 5 Brands'
       font-style: normal
       font-weight: normal
+
+=font-awsome($value1, $value2: null)
+  @if $value2
+    +font-awsome-5-core
+    content: "#{$value2}"
+    @if $value1 == fa or $value1 == fas
+      font-family: 'Font Awesome 5 Free'
+      font-style: normal
+      font-weight: 900
+    @else if $value1 == far
+      font-family: 'Font Awesome 5 Free'
+      font-style: normal
+      font-weight: 400
+    @else if $value1 == fab
+      font-family: 'Font Awesome 5 Brands'
+      font-style: normal
+      font-weight: normal
+  @else
+    +font-awsome-4-core
+    @each $value in $value1
+      content: "#{$value}"
