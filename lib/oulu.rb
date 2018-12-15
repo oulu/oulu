@@ -5,11 +5,18 @@ $LOAD_PATH.unshift dir unless $LOAD_PATH.include?(dir)
 
 require "oulu/generator"
 require "oulu/version"
-require 'sass'
 require 'oulu'
 
-unless defined?(Sass)
-  require 'sass'
+begin
+  require 'sassc'
+  Sass = ::SassC
+rescue LoadError => err
+  begin
+    require 'sass'
+    Sass = ::Sass
+  rescue LoadError
+    raise err
+  end
 end
 
 module Oulu
