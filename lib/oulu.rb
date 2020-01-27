@@ -7,18 +7,6 @@ require "oulu/generator"
 require "oulu/version"
 require 'oulu'
 
-begin
-  require 'sassc'
-  Sass = ::SassC
-rescue LoadError => err
-  begin
-    require 'sass'
-    Sass = ::Sass
-  rescue LoadError
-    raise err
-  end
-end
-
 module Oulu
   @components ||= []
   class << self
