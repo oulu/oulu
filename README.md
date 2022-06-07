@@ -28,12 +28,6 @@ oulu is a sass mixin libraly.
 // oulu-helpers
 @import oulu-helpers
 
-// oulu-modules
-@import modules/web-fonts/font-awsome
-@import modules/web-fonts/montserrat
-@import modules/web-fonts/satisfy
-@import modules/web-fonts/icomoon
-
 ```
 
 ## Contributing
